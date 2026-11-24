@@ -37,7 +37,8 @@ jobs:
       - run: |
           curl -sSL -o sdk.zip https://vcvrack.com/downloads/Rack-SDK-$SDK-win-x64.zip
           unzip -q sdk.zip -d "$HOME"
-          make -j4 dist RACK_DIR="$HOME/Rack-SDK"
+          # MSYS2's GCC 15 rejects a template in the SDK's midi.hpp
+          make -j4 dist RACK_DIR="$HOME/Rack-SDK" RASGO_FLAGS=-Wno-template-body
       - uses: actions/upload-artifact@v4
         with:
           name: win-x64
@@ -54,7 +55,7 @@ jobs:
             triple: x86_64-apple-darwin
           - arch: arm64
             triple: arm64-apple-darwin
-    runs-on: macos-14
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
       - run: |
