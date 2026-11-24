@@ -32,7 +32,7 @@ jobs:
       - uses: msys2/setup-msys2@v2
         with:
           msystem: MINGW64
-          install: make zip unzip mingw-w64-x86_64-gcc mingw-w64-x86_64-jq
+          install: make zip unzip mingw-w64-x86_64-gcc jq
       - uses: actions/checkout@v4
       - run: |
           curl -sSL -o sdk.zip https://vcvrack.com/downloads/Rack-SDK-$SDK-win-x64.zip
@@ -43,21 +43,24 @@ jobs:
           name: win-x64
           path: dist/*.vcvplugin
 
+  # Both slices on Apple Silicon runners; the SDK cross-compiles x64 with
+  # clang --target (CROSS_COMPILE), as VCV's own toolchain does.
   mac:
     strategy:
+      fail-fast: false
       matrix:
         include:
           - arch: x64
-            runner: macos-13
+            triple: x86_64-apple-darwin
           - arch: arm64
-            runner: macos-14
-    runs-on: ${{ matrix.runner }}
+            triple: arm64-apple-darwin
+    runs-on: macos-14
     steps:
       - uses: actions/checkout@v4
       - run: |
           curl -sSL -o sdk.zip https://vcvrack.com/downloads/Rack-SDK-$SDK-mac-${{ matrix.arch }}.zip
           unzip -q sdk.zip -d "$HOME"
-          make -j4 dist RACK_DIR="$HOME/Rack-SDK"
+          make -j4 dist RACK_DIR="$HOME/Rack-SDK" CROSS_COMPILE=${{ matrix.triple }}
       - uses: actions/upload-artifact@v4
         with:
           name: mac-${{ matrix.arch }}
