@@ -81,3 +81,11 @@ LD_LIBRARY_PATH=$SDK /tmp/teste_casca
    próprio.
 3. Os outros módulos em lotes; visores; publicação na VCV Library e
    proposta ao Cardinal.
+
+## Publicação (24/11/2026)
+
+- Repositório público: https://github.com/lucioaraujo/rasgo-modular-vcv
+- Pedido à VCV Library (commit `ebdee9e`): https://github.com/VCVRack/library/issues/1048
+  — para cada versão nova: subir o `"version"` do `plugin.json` e comentar o
+  commit na mesma issue.
+- Pedido de inclusão no Cardinal: https://github.com/DISTRHO/Cardinal/issues/953
