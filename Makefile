@@ -2,7 +2,9 @@
 # RACK_DIR: o SDK gratuito da VCV (Rack SDK 2), fora do repositório.
 RACK_DIR ?= ../Rack-SDK
 
-FLAGS += -Isrc/rasgo $(RASGO_FLAGS)
+# -iquote, not -I: the Rasgo DSP has dsp/Filter.hpp, and on case-insensitive
+# file systems (macOS, Windows) the SDK's <dsp/filter.hpp> would find it.
+FLAGS += -iquote src/rasgo $(RASGO_FLAGS)
 SOURCES += $(wildcard src/*.cpp)
 DISTRIBUTABLES += res
 DISTRIBUTABLES += $(wildcard LICENSE*)
