@@ -6,7 +6,6 @@ FLAGS += -Isrc/rasgo $(RASGO_FLAGS)
 SOURCES += $(wildcard src/*.cpp)
 DISTRIBUTABLES += res
 DISTRIBUTABLES += $(wildcard LICENSE*)
-DISTRIBUTABLES += plugin.json
 
 include $(RACK_DIR)/plugin.mk
 
