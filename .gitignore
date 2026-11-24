@@ -1,0 +1,12 @@
+# builds e o plugin compilado
+/build/
+/dist/
+/dep/
+*.so
+*.dylib
+*.dll
+plugin.*.zip
+*.vcvplugin
+# pastas de teste do VCV Rack (locais)
+/.rack-user/
+/.rack-shots/

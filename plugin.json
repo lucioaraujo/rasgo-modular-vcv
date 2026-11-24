@@ -1,0 +1,976 @@
+{
+  "slug": "RasgoModular",
+  "name": "Rasgo Modular",
+  "version": "2.0.0",
+  "license": "GPL-3.0-or-later",
+  "brand": "Rasgo",
+  "author": "Lúcio de Araújo",
+  "authorEmail": "rasgo.instruments@gmail.com",
+  "authorUrl": "https://rasgoinstruments.arquiviagem.net/",
+  "pluginUrl": "https://lucioaraujo.github.io/rasgo-modular/",
+  "sourceUrl": "https://github.com/lucioaraujo/rasgo-modular-vcv",
+  "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html",
+  "changelogUrl": "https://github.com/lucioaraujo/rasgo-modular-vcv/blob/main/CHANGELOG.md",
+  "donateUrl": "",
+  "modules": [
+    {
+      "slug": "OSC",
+      "name": "OSC",
+      "description": "OSC is an oscillator: it produces a steady, unchanging tone, the raw material almost every synthesizer sound is built from",
+      "tags": [
+        "Oscillator"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-OSC"
+    },
+    {
+      "slug": "WAVETABLE",
+      "name": "WAVETABLE",
+      "description": "WAVETABLE is an oscillator that holds a sequence of 16 different waveforms, like the frames of an animation, from the brightest (a saw) to the smoothest (a sine)",
+      "tags": [
+        "Oscillator"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-WAVETABLE"
+    },
+    {
+      "slug": "ADDITIVE",
+      "name": "ADDITIVE",
+      "description": "ADDITIVE builds sound by adding up 64 sine waves, each at a different frequency",
+      "tags": [
+        "Oscillator"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-ADDITIVE"
+    },
+    {
+      "slug": "OPERATOR",
+      "name": "OPERATOR",
+      "description": "OPERATOR is an FM synthesizer with four sine oscillators, called operators",
+      "tags": [
+        "Oscillator"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-OPERATOR"
+    },
+    {
+      "slug": "PULSAR",
+      "name": "PULSAR",
+      "description": "PULSAR produces a train of tiny sound pulses, each followed by silence",
+      "tags": [
+        "Oscillator"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-PULSAR"
+    },
+    {
+      "slug": "SPECTRA",
+      "name": "SPECTRA",
+      "description": "SPECTRA listens to a sound, finds its strongest frequencies, and plays them again with a set of sine oscillators",
+      "tags": [
+        "Oscillator"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-SPECTRA"
+    },
+    {
+      "slug": "PLL",
+      "name": "PLL",
+      "description": "PLL is an oscillator that knows how to follow another",
+      "tags": [
+        "Oscillator"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-PLL"
+    },
+    {
+      "slug": "CHORD",
+      "name": "CHORD",
+      "description": "CHORD turns one note into a chord",
+      "tags": [
+        "Oscillator"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-CHORD"
+    },
+    {
+      "slug": "NOISE",
+      "name": "NOISE",
+      "description": "NOISE produces noise, the sound of all frequencies mixed at random, in several colors at once, each on its own output: from white, hissy and bright, to brown, deep like the sea",
+      "tags": [
+        "Oscillator"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-NOISE"
+    },
+    {
+      "slug": "MATTER",
+      "name": "MATTER",
+      "description": "MATTER simulates an object that vibrates when struck: a string, a bell, a metal plate, a tube",
+      "tags": [
+        "Oscillator"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-MATTER"
+    },
+    {
+      "slug": "STRING",
+      "name": "STRING",
+      "description": "STRING simulates a string: plucked, as on a guitar; hammered, as on a piano; or bowed, as on a violin",
+      "tags": [
+        "Oscillator"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-STRING"
+    },
+    {
+      "slug": "DRUM",
+      "name": "DRUM",
+      "description": "DRUM is a ready-made percussion voice: on each pulse at the GATE input, it plays a hit",
+      "tags": [
+        "Oscillator"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-DRUM"
+    },
+    {
+      "slug": "GENDYN",
+      "name": "GENDYN",
+      "description": "GENDYN is a sound source in which the wave is a polygon of a few points",
+      "tags": [
+        "Oscillator"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-GENDYN"
+    },
+    {
+      "slug": "RUNGLER",
+      "name": "RUNGLER",
+      "description": "RUNGLER has two oscillators and an 8-bit register",
+      "tags": [
+        "Oscillator"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-RUNGLER"
+    },
+    {
+      "slug": "FILTER",
+      "name": "FILTER",
+      "description": "FILTER lets part of a sound's frequencies through and cuts the rest",
+      "tags": [
+        "Effect"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-FILTER"
+    },
+    {
+      "slug": "LADDER",
+      "name": "LADDER",
+      "description": "LADDER is the ladder filter, the bass filter: four 6 dB stages in cascade, with the output of the last one fed back to the input as resonance",
+      "tags": [
+        "Effect"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-LADDER"
+    },
+    {
+      "slug": "FORMANT",
+      "name": "FORMANT",
+      "description": "FORMANT makes a sound pronounce vowels",
+      "tags": [
+        "Effect"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-FORMANT"
+    },
+    {
+      "slug": "VOCODER",
+      "name": "VOCODER",
+      "description": "VOCODER makes one sound speak with another's voice",
+      "tags": [
+        "Effect"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-VOCODER"
+    },
+    {
+      "slug": "RESONATOR",
+      "name": "RESONATOR",
+      "description": "RESONATOR is a body that rings when something strikes it",
+      "tags": [
+        "Effect"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-RESONATOR"
+    },
+    {
+      "slug": "WASP",
+      "name": "WASP",
+      "description": "WASP is a filter that distorts",
+      "tags": [
+        "Effect"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-WASP"
+    },
+    {
+      "slug": "LPG",
+      "name": "LPG",
+      "description": "LPG, short for low pass gate, is a gate that opens and closes the sound on every strike, lowering the volume and darkening the tone at the same time",
+      "tags": [
+        "Effect"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-LPG"
+    },
+    {
+      "slug": "VCA",
+      "name": "VCA",
+      "description": "VCA controls the volume of one sound with another signal",
+      "tags": [
+        "Effect"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-VCA"
+    },
+    {
+      "slug": "VCA4",
+      "name": "VCA4",
+      "description": "VCA4 puts four volume controls on one panel, plus an output that adds all four",
+      "tags": [
+        "Effect"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-VCA4"
+    },
+    {
+      "slug": "SHAPE",
+      "name": "SHAPE",
+      "description": "SHAPE enriches a sound by distorting it in controlled ways",
+      "tags": [
+        "Effect"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-SHAPE"
+    },
+    {
+      "slug": "SHIFTER",
+      "name": "SHIFTER",
+      "description": "SHIFTER moves every frequency in a sound by the same number of hertz",
+      "tags": [
+        "Effect"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-SHIFTER"
+    },
+    {
+      "slug": "CRUSH",
+      "name": "CRUSH",
+      "description": "CRUSH dirties sound the digital way",
+      "tags": [
+        "Effect"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-CRUSH"
+    },
+    {
+      "slug": "PARAMETRIC",
+      "name": "PARAMETRIC",
+      "description": "PARAMETRIC is a four-band equalizer, the studio tool for adjusting a tone with precision",
+      "tags": [
+        "Effect"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-PARAMETRIC"
+    },
+    {
+      "slug": "GLIDE",
+      "name": "GLIDE",
+      "description": "GLIDE makes one note slide into the next instead of jumping",
+      "tags": [
+        "Effect"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-GLIDE"
+    },
+    {
+      "slug": "CONTROL",
+      "name": "CONTROL",
+      "description": "CONTROL adjusts control signals before they reach their destination",
+      "tags": [
+        "Effect"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-CONTROL"
+    },
+    {
+      "slug": "DYNAMICS",
+      "name": "DYNAMICS",
+      "description": "DYNAMICS is a compressor",
+      "tags": [
+        "Effect"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-DYNAMICS"
+    },
+    {
+      "slug": "ELASTIC",
+      "name": "ELASTIC",
+      "description": "ELASTIC is a chain of masses tied by springs, fixed at both ends",
+      "tags": [
+        "Effect"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-ELASTIC"
+    },
+    {
+      "slug": "TAPE",
+      "name": "TAPE",
+      "description": "TAPE is a tape machine",
+      "tags": [
+        "Effect"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-TAPE"
+    },
+    {
+      "slug": "ENVELOPE",
+      "name": "ENVELOPE",
+      "description": "ENVELOPE shapes a note over time: how it starts, how it falls, how much it sustains and how it fades",
+      "tags": [
+        "Envelope generator",
+        "LFO"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-ENVELOPE"
+    },
+    {
+      "slug": "FUNCTION",
+      "name": "FUNCTION",
+      "description": "FUNCTION generates a ramp that rises and falls without stopping",
+      "tags": [
+        "Envelope generator",
+        "LFO"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-FUNCTION"
+    },
+    {
+      "slug": "STAGES",
+      "name": "STAGES",
+      "description": "STAGES draws a curve made of several linked segments, from two to eight",
+      "tags": [
+        "Envelope generator",
+        "LFO"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-STAGES"
+    },
+    {
+      "slug": "DRIFT",
+      "name": "DRIFT",
+      "description": "DRIFT produces very slow movements, on the scale of minutes",
+      "tags": [
+        "Envelope generator",
+        "LFO"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-DRIFT"
+    },
+    {
+      "slug": "CHAOS",
+      "name": "CHAOS",
+      "description": "CHAOS generates unpredictable movement from a simulated physical system: something like a ball rolling between two valleys, sometimes settling in one, sometimes jumping to the other",
+      "tags": [
+        "Envelope generator",
+        "LFO"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-CHAOS"
+    },
+    {
+      "slug": "SH",
+      "name": "SH",
+      "description": "SH, short for sample and hold, captures the value of a signal at the moment of a pulse and holds it until the next pulse",
+      "tags": [
+        "Envelope generator",
+        "LFO"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-SH"
+    },
+    {
+      "slug": "BOUNCE",
+      "name": "BOUNCE",
+      "description": "BOUNCE drops balls that bounce, lower and faster each time, until they stop",
+      "tags": [
+        "Envelope generator",
+        "LFO"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-BOUNCE"
+    },
+    {
+      "slug": "MOUSSE",
+      "name": "MOUSSE",
+      "description": "MOUSSE is a foam",
+      "tags": [
+        "Envelope generator",
+        "LFO"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-MOUSSE"
+    },
+    {
+      "slug": "PENDULUM",
+      "name": "PENDULUM",
+      "description": "PENDULUM is a double pendulum: a pendulum with another hanging from its tip",
+      "tags": [
+        "Envelope generator",
+        "LFO"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-PENDULUM"
+    },
+    {
+      "slug": "EPICYCLE",
+      "name": "EPICYCLE",
+      "description": "EPICYCLE draws with circles: up to eight, each one turning on the rim of the one before",
+      "tags": [
+        "Envelope generator",
+        "LFO"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-EPICYCLE"
+    },
+    {
+      "slug": "SUPPLY",
+      "name": "SUPPLY",
+      "description": "SUPPLY is the patch's power supply, put into a module with cables",
+      "tags": [
+        "Envelope generator",
+        "LFO"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-SUPPLY"
+    },
+    {
+      "slug": "MAGNET",
+      "name": "MAGNET",
+      "description": "MAGNET is a grid of 8 by 8 small magnets, each pointing up or down",
+      "tags": [
+        "Envelope generator",
+        "LFO"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-MAGNET"
+    },
+    {
+      "slug": "ORBIT",
+      "name": "ORBIT",
+      "description": "ORBIT is a small solar system: a sun in the centre and two or three planets in gravity",
+      "tags": [
+        "Envelope generator",
+        "LFO"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-ORBIT"
+    },
+    {
+      "slug": "PRESSURE",
+      "name": "PRESSURE",
+      "description": "PRESSURE is a box of gas",
+      "tags": [
+        "Envelope generator",
+        "LFO"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-PRESSURE"
+    },
+    {
+      "slug": "REFRACT",
+      "name": "REFRACT",
+      "description": "REFRACT is a light ray that starts inside a glass layer, crosses three others and exits into air",
+      "tags": [
+        "Envelope generator",
+        "LFO"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-REFRACT"
+    },
+    {
+      "slug": "PREDATOR",
+      "name": "PREDATOR",
+      "description": "PREDATOR is a small ecosystem: prey that grow on their own and predators that grow by eating",
+      "tags": [
+        "Envelope generator",
+        "LFO"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-PREDATOR"
+    },
+    {
+      "slug": "FORM",
+      "name": "FORM",
+      "description": "FORM shapes the whole piece",
+      "tags": [
+        "Envelope generator",
+        "LFO"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-FORM"
+    },
+    {
+      "slug": "CLOCK",
+      "name": "CLOCK",
+      "description": "CLOCK is the patch's timekeeper",
+      "tags": [
+        "Clock generator",
+        "Sequencer"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-CLOCK"
+    },
+    {
+      "slug": "LOGIC",
+      "name": "LOGIC",
+      "description": "LOGIC combines and transforms rhythms",
+      "tags": [
+        "Clock generator",
+        "Sequencer"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-LOGIC"
+    },
+    {
+      "slug": "TURING",
+      "name": "TURING",
+      "description": "TURING invents melodies by chance and lets you keep the ones you like",
+      "tags": [
+        "Clock generator",
+        "Sequencer"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-TURING"
+    },
+    {
+      "slug": "SEQUENCE",
+      "name": "SEQUENCE",
+      "description": "SEQUENCE plays a short phrase you write: up to eight notes, each with its own pitch, each on or silent",
+      "tags": [
+        "Clock generator",
+        "Sequencer"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-SEQUENCE"
+    },
+    {
+      "slug": "TRIGSEQ",
+      "name": "TRIGSEQ",
+      "description": "TRIGSEQ generates drum rhythms on four lanes at once, meant for kick, snare, hi-hat and an extra percussion",
+      "tags": [
+        "Clock generator",
+        "Sequencer"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-TRIGSEQ"
+    },
+    {
+      "slug": "ARP",
+      "name": "ARP",
+      "description": "ARP is an arpeggiator: it plays a chord note by note, and so a chord becomes a melody",
+      "tags": [
+        "Clock generator",
+        "Sequencer"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-ARP"
+    },
+    {
+      "slug": "CELL",
+      "name": "CELL",
+      "description": "CELL is a cellular automaton: a row of cells, lit or unlit, that rewrites itself on every pulse",
+      "tags": [
+        "Clock generator",
+        "Sequencer"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-CELL"
+    },
+    {
+      "slug": "TAP",
+      "name": "TAP",
+      "description": "TAP gives the patch the tempo of whoever is playing",
+      "tags": [
+        "Clock generator",
+        "Sequencer"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-TAP"
+    },
+    {
+      "slug": "POLYGON",
+      "name": "POLYGON",
+      "description": "POLYGON is polymeter drawn as a figure",
+      "tags": [
+        "Clock generator",
+        "Sequencer"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-POLYGON"
+    },
+    {
+      "slug": "BUDGET",
+      "name": "BUDGET",
+      "description": "BUDGET gives the voices a budget of events",
+      "tags": [
+        "Clock generator",
+        "Sequencer"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-BUDGET"
+    },
+    {
+      "slug": "INTERFERENCE",
+      "name": "INTERFERENCE",
+      "description": "INTERFERENCE is a screen lit by two or three coherent light sources",
+      "tags": [
+        "Clock generator",
+        "Sequencer"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-INTERFERENCE"
+    },
+    {
+      "slug": "SWARM",
+      "name": "SWARM",
+      "description": "SWARM is a school of six fish, and each fish is a clock with its own tempo",
+      "tags": [
+        "Clock generator",
+        "Sequencer"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-SWARM"
+    },
+    {
+      "slug": "ECLIPSE",
+      "name": "ECLIPSE",
+      "description": "ECLIPSE is the Moon with its two months",
+      "tags": [
+        "Clock generator",
+        "Sequencer"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-ECLIPSE"
+    },
+    {
+      "slug": "SEASON",
+      "name": "SEASON",
+      "description": "SEASON is a very slow clock: a day with sunrise and sunset, a year with four seasons",
+      "tags": [
+        "Clock generator",
+        "Sequencer"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-SEASON"
+    },
+    {
+      "slug": "TEMPO",
+      "name": "TEMPO",
+      "description": "TEMPO makes the tempo breathe",
+      "tags": [
+        "Clock generator",
+        "Sequencer"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-TEMPO"
+    },
+    {
+      "slug": "VOLTA",
+      "name": "VOLTA",
+      "description": "VOLTA is a loop of steps that varies without getting lost",
+      "tags": [
+        "Clock generator",
+        "Sequencer"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-VOLTA"
+    },
+    {
+      "slug": "QUANTIZER",
+      "name": "QUANTIZER",
+      "description": "QUANTIZER pins a continuous signal to the notes of a scale",
+      "tags": [
+        "Random",
+        "Logic"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-QUANTIZER"
+    },
+    {
+      "slug": "HARMONY",
+      "name": "HARMONY",
+      "description": "HARMONY decides which keys the music passes through",
+      "tags": [
+        "Random",
+        "Logic"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-HARMONY"
+    },
+    {
+      "slug": "ABACUS",
+      "name": "ABACUS",
+      "description": "ABACUS treats signals as numbers",
+      "tags": [
+        "Random",
+        "Logic"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-ABACUS"
+    },
+    {
+      "slug": "DECISION",
+      "name": "DECISION",
+      "description": "DECISION is the patch's source of choices",
+      "tags": [
+        "Random",
+        "Logic"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-DECISION"
+    },
+    {
+      "slug": "BOXCAR",
+      "name": "BOXCAR",
+      "description": "BOXCAR measures a signal in short windows and averages many measurements in a row",
+      "tags": [
+        "Random",
+        "Logic"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-BOXCAR"
+    },
+    {
+      "slug": "MARKOV",
+      "name": "MARKOV",
+      "description": "MARKOV is a Markov chain: it learns where a melody goes from where (after this note came that one three times, that other one once) and improvises by drawing the next note from what it learned",
+      "tags": [
+        "Random",
+        "Logic"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-MARKOV"
+    },
+    {
+      "slug": "COHERENCE",
+      "name": "COHERENCE",
+      "description": "COHERENCE measures how predictable a melody is and breaks when it becomes too ordered",
+      "tags": [
+        "Random",
+        "Logic"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-COHERENCE"
+    },
+    {
+      "slug": "KEY",
+      "name": "KEY",
+      "description": "KEY listens to whoever is playing, estimates the key and hands the tonic and scale to QUANTIZER",
+      "tags": [
+        "Random",
+        "Logic"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-KEY"
+    },
+    {
+      "slug": "ACCENT",
+      "name": "ACCENT",
+      "description": "ACCENT gives a line its phrasing",
+      "tags": [
+        "Random",
+        "Logic"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-ACCENT"
+    },
+    {
+      "slug": "BLEFE",
+      "name": "BLEFE",
+      "description": "BLEFE is a game of trust made of signals",
+      "tags": [
+        "Random",
+        "Logic"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-BLEFE"
+    },
+    {
+      "slug": "FRONTEIRA",
+      "name": "FRONTEIRA",
+      "description": "FRONTEIRA listens to a melody and marks where a new idea begins",
+      "tags": [
+        "Random",
+        "Logic"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-FRONTEIRA"
+    },
+    {
+      "slug": "VERSUS",
+      "name": "VERSUS",
+      "description": "VERSUS mixes two signals with polarity and decides when the mix crosses a threshold",
+      "tags": [
+        "Random",
+        "Logic"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-VERSUS"
+    },
+    {
+      "slug": "INTERPRET",
+      "name": "INTERPRET",
+      "description": "INTERPRET plays the incoming notes the way a performer would",
+      "tags": [
+        "Random",
+        "Logic"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-INTERPRET"
+    },
+    {
+      "slug": "PHRASE",
+      "name": "PHRASE",
+      "description": "PHRASE proposes a motif and plays it when pulses arrive at CLK",
+      "tags": [
+        "Random",
+        "Logic"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-PHRASE"
+    },
+    {
+      "slug": "SWITCH",
+      "name": "SWITCH",
+      "description": "SWITCH is a selector switch operated by the patch",
+      "tags": [
+        "Utility"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-SWITCH"
+    },
+    {
+      "slug": "MATRIX",
+      "name": "MATRIX",
+      "description": "MATRIX connects four inputs to four outputs along every possible path at once",
+      "tags": [
+        "Utility"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-MATRIX"
+    },
+    {
+      "slug": "MULT",
+      "name": "MULT",
+      "description": "MULT takes a control signal and distributes it to four outputs, each with its own size and offset adjustment",
+      "tags": [
+        "Utility"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-MULT"
+    },
+    {
+      "slug": "PLANAR",
+      "name": "PLANAR",
+      "description": "PLANAR blends four sounds placed at the corners of a square",
+      "tags": [
+        "Utility"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-PLANAR"
+    },
+    {
+      "slug": "VIA",
+      "name": "VIA",
+      "description": "VIA is the signal's path treated as matter",
+      "tags": [
+        "Utility"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-VIA"
+    },
+    {
+      "slug": "RELATE",
+      "name": "RELATE",
+      "description": "RELATE takes two voices and returns them transformed by the relationship between them",
+      "tags": [
+        "Utility"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-RELATE"
+    },
+    {
+      "slug": "SUM",
+      "name": "SUM",
+      "description": "SUM joins signals",
+      "tags": [
+        "Utility"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-SUM"
+    },
+    {
+      "slug": "SPACE",
+      "name": "SPACE",
+      "description": "SPACE puts the sound in a place",
+      "tags": [
+        "Effect",
+        "Delay"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-SPACE"
+    },
+    {
+      "slug": "HALL",
+      "name": "HALL",
+      "description": "HALL is a stereo reverb, the sound of a large hall, a church or a studio plate",
+      "tags": [
+        "Effect",
+        "Delay"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-HALL"
+    },
+    {
+      "slug": "LOOPER",
+      "name": "LOOPER",
+      "description": "LOOPER is an echo that imitates magnetic tape",
+      "tags": [
+        "Effect",
+        "Delay"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-LOOPER"
+    },
+    {
+      "slug": "SWIRL",
+      "name": "SWIRL",
+      "description": "SWIRL brings together four movement effects: chorus, flanger, ensemble and phaser",
+      "tags": [
+        "Effect",
+        "Delay"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-SWIRL"
+    },
+    {
+      "slug": "MEMORY",
+      "name": "MEMORY",
+      "description": "MEMORY continuously records the last three seconds of whatever goes into it and plays that material back in tiny pieces, called grains",
+      "tags": [
+        "Effect",
+        "Delay"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-MEMORY"
+    },
+    {
+      "slug": "SAMPLER",
+      "name": "SAMPLER",
+      "description": "SAMPLER records a stretch of whatever goes into it, up to about eight seconds, divides that stretch into slices, and plays them when it receives pulses",
+      "tags": [
+        "Effect",
+        "Delay"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-SAMPLER"
+    },
+    {
+      "slug": "TURNTABLE",
+      "name": "TURNTABLE",
+      "description": "TURNTABLE plays a recording as if it were on a vinyl record",
+      "tags": [
+        "Effect",
+        "Delay"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-TURNTABLE"
+    },
+    {
+      "slug": "SPRING",
+      "name": "SPRING",
+      "description": "SPRING is a spring reverb",
+      "tags": [
+        "Effect",
+        "Delay"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-SPRING"
+    },
+    {
+      "slug": "PRISM",
+      "name": "PRISM",
+      "description": "PRISM splits sound into colours, as a prism splits light",
+      "tags": [
+        "Effect",
+        "Delay"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-PRISM"
+    },
+    {
+      "slug": "APOCRIFO",
+      "name": "APOCRIFO",
+      "description": "APOCRIFO brings the distant past into the present, as a rupture",
+      "tags": [
+        "Effect",
+        "Delay"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-APOCRIFO"
+    },
+    {
+      "slug": "CUTUP",
+      "name": "CUTUP",
+      "description": "CUTUP cuts up the patch's own sound in tempo",
+      "tags": [
+        "Effect",
+        "Delay"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-CUTUP"
+    },
+    {
+      "slug": "LENS",
+      "name": "LENS",
+      "description": "LENS is a camera lens for sound",
+      "tags": [
+        "Effect",
+        "Delay"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-LENS"
+    },
+    {
+      "slug": "SCOPE",
+      "name": "SCOPE",
+      "description": "SCOPE shows a signal's waveform, like an oscilloscope, and measures what it hears: volume, brightness, pitch and the start of each note",
+      "tags": [
+        "Visual"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-SCOPE"
+    },
+    {
+      "slug": "LISTEN",
+      "name": "LISTEN",
+      "description": "LISTEN follows the energy of incoming sound in three regions: low, mid and high",
+      "tags": [
+        "Visual"
+      ],
+      "manualUrl": "https://lucioaraujo.github.io/rasgo-modular/modulos-en.html#mod-LISTEN"
+    }
+  ]
+}
