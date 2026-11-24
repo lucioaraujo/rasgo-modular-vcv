@@ -22,6 +22,15 @@ Rack patch.
 Five modules are the application's own connectors and are not included,
 because VCV Rack has its own: SIGNAL-IN, POLY-IN, NOTE-OUT, MIXER, MASTER.
 
+## Install
+
+Download the `.vcvplugin` for your system from
+[Releases](https://github.com/lucioaraujo/rasgo-modular-vcv/releases)
+(Windows, macOS Intel and Apple Silicon, Linux). In VCV Rack choose
+**Help → Open user folder**, put the file in the `plugins-<system>-<arch>`
+folder there (for example `plugins-win-x64`) and restart Rack. The modules
+appear under the brand **Rasgo**.
+
 ## Build
 
 With the free VCV Rack SDK 2:
@@ -53,5 +62,11 @@ aplicativo Rasgo Modular; o instrumento completo (seeds, a mão do VARIA, os
 cabos como processo) continua no aplicativo. Dicas em cada knob e jack,
 manual e créditos no botão direito, polifonia até 16 vozes. Licença
 GPL-3.0-or-later.
+
+**Instalação:** baixe o `.vcvplugin` do seu sistema em
+[Releases](https://github.com/lucioaraujo/rasgo-modular-vcv/releases); no
+VCV Rack, escolha **Help → Open user folder**, coloque o arquivo na pasta
+`plugins-<sistema>-<arquitetura>` e reabra o Rack. Os módulos aparecem com
+a marca **Rasgo**.
 
 Contact: rasgo.instruments@gmail.com
