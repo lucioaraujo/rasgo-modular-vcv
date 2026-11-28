@@ -56,23 +56,26 @@ public:
 
     Panel panel() const override {
         Panel p;
+        // Personalização (autor, 27/11/2026: "avance na personalização dos
+        // módulos"; jacks embaixo): os estágios
+        // em pé: CURVE, HOLD e TILT em sliders verticais, a forma de cada etapa.
         p.hp = 12;
         p.add(Widget::Kind::Label, "STAGES", "", 2.5f, 2.0f);
-        p.add(Widget::Kind::Display, "stages", "", 2.5f, 6.0f, 56.0f);
-        p.add(Widget::Kind::Knob, "SEGS", "segments", 8.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "RATE", "rate", 24.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "CNTR", "contour", 40.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "CURVE", "curve", 8.0f, 54.0f);
-        p.add(Widget::Kind::Knob, "HOLD", "hold", 24.0f, 54.0f);
-        p.add(Widget::Kind::Knob, "TILT", "tilt", 40.0f, 54.0f);
-        p.add(Widget::Kind::Knob, "JITR", "jitter", 8.0f, 78.0f);
-        p.add(Widget::Kind::Toggle, "LOOP", "loop", 26.0f, 80.0f);
-        p.add(Widget::Kind::Jack, "GATE", "in:gate", 8.0f, 100.0f);
-        p.add(Widget::Kind::Jack, "RST", "in:reset", 20.0f, 100.0f);
-        p.add(Widget::Kind::Jack, "RTM", "in:rate_mod", 32.0f, 100.0f);
-        p.add(Widget::Kind::Jack, "OUT", "out:out", 8.0f, 120.0f);
-        p.add(Widget::Kind::Jack, "EOC", "out:eoc", 20.0f, 120.0f);
-        p.add(Widget::Kind::Jack, "STEP", "out:step", 32.0f, 120.0f);
+        p.add(Widget::Kind::Display, "stages", "", 2.5f, 6.0f, 55.96f);
+        p.add(Widget::Kind::Knob, "SEGS", "segments", 7.43f, 27.0f);
+        p.add(Widget::Kind::Knob, "RATE", "rate", 20.13f, 27.0f);
+        p.add(Widget::Kind::Knob, "CNTR", "contour", 32.83f, 27.0f);
+        p.add(Widget::Kind::Knob, "JITR", "jitter", 45.53f, 27.0f);
+        p.add(Widget::Kind::Slider, "CURVE", "curve", 7.43f, 42.0f);
+        p.add(Widget::Kind::Slider, "HOLD", "hold", 20.13f, 42.0f);
+        p.add(Widget::Kind::Slider, "TILT", "tilt", 32.83f, 42.0f);
+        p.add(Widget::Kind::Toggle, "LOOP", "loop", 47.53f, 56.0f);
+        p.add(Widget::Kind::Jack, "GATE", "in:gate", 17.78f, 92.0f);
+        p.add(Widget::Kind::Jack, "RST", "in:reset", 30.48f, 92.0f);
+        p.add(Widget::Kind::Jack, "RTM", "in:rate_mod", 43.18f, 92.0f);
+        p.add(Widget::Kind::Jack, "OUT", "out:out", 17.78f, 110.0f);
+        p.add(Widget::Kind::Jack, "EOC", "out:eoc", 30.48f, 110.0f);
+        p.add(Widget::Kind::Jack, "STEP", "out:step", 43.18f, 110.0f);
         return p;
     }
 

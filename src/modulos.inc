@@ -1,4 +1,4 @@
-// GERADO por tools/gerar_plugin.py (Rasgo Modular 66421f6). Não editar.
+// GERADO por tools/gerar_plugin.py (Rasgo Modular ed68437). Não editar.
 #include "dsp/Abacus.hpp"
 #include "dsp/Accent.hpp"
 #include "dsp/Additive.hpp"

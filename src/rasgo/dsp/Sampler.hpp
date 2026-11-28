@@ -71,21 +71,26 @@ public:
 
     Panel panel() const override {
         Panel p;
+        // Revisão de painel (autor, 26/11/2026): colunas pelo centro, knobs e
+        // jacks nas mesmas colunas, saídas embaixo no centro (G1–G4).
+        // Personalização (autor, 28/11/2026: "avance nos 16 módulos que ainda
+        // faltam personalizar"; jacks embaixo): a agulha na
+        // amostra: START (onde) e SPEED (a que velocidade), em par de 12 mm.
         p.hp = 14;
         p.add(Widget::Kind::Label, "SAMPLER", "", 2.5f, 2.0f);
-        p.add(Widget::Kind::Display, "wave", "", 2.5f, 6.0f, 66.0f);
-        p.add(Widget::Kind::Knob, "START", "start", 7.0f, 28.0f);
-        p.add(Widget::Kind::Knob, "SPEED", "speed", 24.0f, 28.0f);
-        p.add(Widget::Kind::Knob, "SLICE", "slices", 41.0f, 28.0f);
-        p.add(Widget::Kind::Knob, "REPIT", "repitch", 58.0f, 28.0f);
-        p.add(Widget::Kind::Knob, "WEAR", "wear", 7.0f, 50.0f);
-        p.add(Widget::Kind::Toggle, "LOOP", "loop", 26.0f, 50.0f);
-        p.add(Widget::Kind::Jack, "TRIG", "in:trig", 8.0f, 92.0f);
-        p.add(Widget::Kind::Jack, "IN", "in:in", 22.0f, 92.0f);
-        p.add(Widget::Kind::Jack, "REC", "in:rec", 34.0f, 92.0f);
-        p.add(Widget::Kind::Jack, "POS", "in:pos", 46.0f, 92.0f);
-        p.add(Widget::Kind::Jack, "PIT", "in:pitch", 58.0f, 92.0f);
-        p.add(Widget::Kind::Jack, "OUT", "out:out", 8.0f, 114.0f);
+        p.add(Widget::Kind::Display, "wave", "", 2.5f, 6.0f, 66.12f);
+        p.add(Widget::Kind::Knob, "START", "start", 19.40f, 27.0f, 12.0f);
+        p.add(Widget::Kind::Knob, "SPEED", "speed", 39.72f, 27.0f, 12.0f);
+        p.add(Widget::Kind::Knob, "SLICE", "slices", 17.56f, 46.0f);
+        p.add(Widget::Kind::Knob, "REPIT", "repitch", 31.56f, 46.0f);
+        p.add(Widget::Kind::Knob, "WEAR", "wear", 45.56f, 46.0f);
+        p.add(Widget::Kind::Toggle, "LOOP", "loop", 33.56f, 62.0f);
+        p.add(Widget::Kind::Jack, "TRIG", "in:trig", 10.16f, 92.0f);
+        p.add(Widget::Kind::Jack, "IN", "in:in", 22.86f, 92.0f);
+        p.add(Widget::Kind::Jack, "REC", "in:rec", 35.56f, 92.0f);
+        p.add(Widget::Kind::Jack, "POS", "in:pos", 48.26f, 92.0f);
+        p.add(Widget::Kind::Jack, "PIT", "in:pitch", 60.96f, 92.0f);
+        p.add(Widget::Kind::Jack, "OUT", "out:out", 35.56f, 110.0f);
         return p;
     }
 

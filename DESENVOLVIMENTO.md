@@ -73,6 +73,18 @@ g++ -std=gnu++17 -O2 -I$SDK/include -I$SDK/dep/include -Isrc -Isrc/rasgo \
 LD_LIBRARY_PATH=$SDK /tmp/teste_casca
 ```
 
+## 2.1.0 (28/11/2026, preparada; tag pendente)
+
+Regerado do Rasgo Modular `ed68437` (`tools/gerar_plugin.py`, que agora
+copia também as regras de painel de `src/ui`: `CompactPanel`,
+`PanelGeometry`, `PrimaryControl`, `OutputLights`). Portado para
+`src/Casca.hpp`: placa das saídas (`ui::outputPlates`), luz verde/vermelha
+por saída (`SmallLight<GreenRedLight>`, pico com sinal do bloco), knob
+branco (Davies 1900h) no controle principal, acento prata, visores fósforo
+(SCOPE) e polar (POLYGON, ORBIT, EPICYCLE, SEASON). O ajuste do VCV
+(aproximar fileiras, estreitar, subir) continua o mesmo. `teste_casca` e
+`teste_dicas` passam; falta o autor abrir no Rack antes da tag `v2.1.0`.
+
 ## Próximo
 
 1. Abrir no VCV Rack Free (gratuito) e ouvir; imagens dos painéis para o

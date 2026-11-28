@@ -52,21 +52,24 @@ public:
 
     Panel panel() const override {
         Panel p;
+        // Personalização (autor, 28/11/2026: "avance nos 16 módulos que ainda
+        // faltam personalizar"; jacks embaixo): a espuma:
+        // STIFF (a firmeza) e VISC (a viscosidade), em par de 12 mm.
         p.hp = 10;
         p.add(Widget::Kind::Label, "MOUSSE", "", 2.5f, 2.0f);
-        p.add(Widget::Kind::Display, "mousse", "", 2.5f, 6.0f, 45.8f);
-        p.add(Widget::Kind::Knob, "STIFF", "stiff", 5.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "VISC", "visc", 20.5f, 30.0f);
-        p.add(Widget::Kind::Knob, "SLOW", "slow", 36.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "RET", "recover", 5.0f, 50.0f);
-        p.add(Widget::Kind::Knob, "FORCE", "force", 20.5f, 50.0f);
-        p.add(Widget::Kind::Knob, "FATG", "fatigue", 36.0f, 50.0f);
-        p.add(Widget::Kind::Knob, "RATE", "rate", 5.0f, 70.0f);
-        p.add(Widget::Kind::Jack, "HIT", "in:hit", 7.0f, 96.0f);
-        p.add(Widget::Kind::Jack, "PRESS", "in:press", 21.0f, 96.0f);
-        p.add(Widget::Kind::Jack, "DEPTH", "out:depth", 8.0f, 116.0f);
-        p.add(Widget::Kind::Jack, "SPEED", "out:speed", 24.0f, 116.0f);
-        p.add(Widget::Kind::Jack, "REST", "out:rest", 39.0f, 116.0f);
+        p.add(Widget::Kind::Display, "mousse", "", 2.5f, 6.0f, 45.80f);
+        p.add(Widget::Kind::Knob, "STIFF", "stiff", 9.24f, 27.0f, 12.0f);
+        p.add(Widget::Kind::Knob, "VISC", "visc", 29.56f, 27.0f, 12.0f);
+        p.add(Widget::Kind::Knob, "SLOW", "slow", 7.40f, 46.0f);
+        p.add(Widget::Kind::Knob, "RET", "recover", 21.40f, 46.0f);
+        p.add(Widget::Kind::Knob, "FORCE", "force", 35.40f, 46.0f);
+        p.add(Widget::Kind::Knob, "FATG", "fatigue", 14.40f, 62.0f);
+        p.add(Widget::Kind::Knob, "RATE", "rate", 28.40f, 62.0f);
+        p.add(Widget::Kind::Jack, "HIT", "in:hit", 19.05f, 92.0f);
+        p.add(Widget::Kind::Jack, "PRESS", "in:press", 31.75f, 92.0f);
+        p.add(Widget::Kind::Jack, "DEPTH", "out:depth", 11.40f, 110.0f);
+        p.add(Widget::Kind::Jack, "SPEED", "out:speed", 25.40f, 110.0f);
+        p.add(Widget::Kind::Jack, "REST", "out:rest", 39.40f, 110.0f);
         return p;
     }
 

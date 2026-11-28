@@ -49,23 +49,26 @@ public:
 
     Panel panel() const override {
         Panel p;
+        // Personalização (autor, 28/11/2026: "avance nesses 10 que sugeriu e
+        // no shifter também"; jacks embaixo): o TETO (o
+        // orçamento) grande no centro; o ciclo à esquerda, o modo à direita.
         p.hp = 10;
         p.add(Widget::Kind::Label, "BUDGET", "", 2.5f, 2.0f);
-        p.add(Widget::Kind::Display, "budget", "", 2.5f, 6.0f, 45.8f);
-        p.add(Widget::Kind::Knob, "TETO", "ceiling", 8.0f, 30.0f);
-        p.add(Widget::Kind::Toggle, "COOP", "mode", 23.0f, 32.0f, 10.0f);
-        p.add(Widget::Kind::Knob, "CICLO", "cycle", 38.0f, 30.0f);
-        p.add(Widget::Kind::Jack, "G1", "in:g1", 7.0f, 72.0f);
-        p.add(Widget::Kind::Jack, "G2", "in:g2", 19.0f, 72.0f);
-        p.add(Widget::Kind::Jack, "G3", "in:g3", 31.0f, 72.0f);
-        p.add(Widget::Kind::Jack, "G4", "in:g4", 43.0f, 72.0f);
-        p.add(Widget::Kind::Jack, "CLK", "in:clock", 7.0f, 88.0f);
-        p.add(Widget::Kind::Jack, "O1", "out:o1", 7.0f, 104.0f);
-        p.add(Widget::Kind::Jack, "O2", "out:o2", 19.0f, 104.0f);
-        p.add(Widget::Kind::Jack, "O3", "out:o3", 31.0f, 104.0f);
-        p.add(Widget::Kind::Jack, "O4", "out:o4", 43.0f, 104.0f);
-        p.add(Widget::Kind::Jack, "SALDO", "out:balance", 7.0f, 120.0f);
-        p.add(Widget::Kind::Jack, "FIM", "out:spent", 21.0f, 120.0f);
+        p.add(Widget::Kind::Display, "budget", "", 2.5f, 6.0f, 45.80f);
+        p.add(Widget::Kind::Knob, "CICLO", "cycle", 5.40f, 31.0f);
+        p.add(Widget::Kind::Knob, "TETO", "ceiling", 18.40f, 27.0f, 14.0f);   // o herói
+        p.add(Widget::Kind::Toggle, "COOP", "mode", 39.40f, 33.0f, 10.0f);
+        p.add(Widget::Kind::Jack, "G1", "in:g1", 6.35f, 62.0f);
+        p.add(Widget::Kind::Jack, "G2", "in:g2", 19.05f, 62.0f);
+        p.add(Widget::Kind::Jack, "G3", "in:g3", 31.75f, 62.0f);
+        p.add(Widget::Kind::Jack, "G4", "in:g4", 44.45f, 62.0f);
+        p.add(Widget::Kind::Jack, "CLK", "in:clock", 25.40f, 78.0f);
+        p.add(Widget::Kind::Jack, "O1", "out:o1", 6.35f, 94.0f);
+        p.add(Widget::Kind::Jack, "O2", "out:o2", 19.05f, 94.0f);
+        p.add(Widget::Kind::Jack, "O3", "out:o3", 31.75f, 94.0f);
+        p.add(Widget::Kind::Jack, "O4", "out:o4", 44.45f, 94.0f);
+        p.add(Widget::Kind::Jack, "SALDO", "out:balance", 19.05f, 110.0f);
+        p.add(Widget::Kind::Jack, "FIM", "out:spent", 31.75f, 110.0f);
         return p;
     }
 

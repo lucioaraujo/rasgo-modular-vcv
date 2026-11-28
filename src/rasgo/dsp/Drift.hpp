@@ -67,26 +67,29 @@ public:
     // de campo correlacionadas (a-d) · campo bruto + gatilho de virada.
     Panel panel() const override {
         Panel p;
-        p.hp = 12;   // 10 → 12 HP em 11/11/2026: RESID e ELAST
+        // Personalização (autor, 28/11/2026: "avance nos 16 módulos que ainda
+        // faltam personalizar"; jacks embaixo): o passeio:
+        // RATE (o passo no tempo) e DEPTH (o quanto se afasta), em par de 12 mm.
+        p.hp = 12;
         p.add(Widget::Kind::Label, "DRIFT", "", 2.5f, 2.0f);
-        p.add(Widget::Kind::Display, "field", "", 2.5f, 6.0f, 56.0f);
-        p.add(Widget::Kind::Knob, "RATE", "rate", 9.0f, 28.0f);
-        p.add(Widget::Kind::Knob, "DEPTH", "depth", 30.0f, 28.0f);
-        p.add(Widget::Kind::Knob, "MOMT", "momentum", 9.0f, 48.0f);
-        p.add(Widget::Kind::Knob, "STRD", "stride", 30.0f, 48.0f);
-        p.add(Widget::Kind::Knob, "BIAS", "bias", 9.0f, 70.0f);
-        p.add(Widget::Kind::Knob, "ANCHR", "anchor", 30.0f, 70.0f);
-        p.add(Widget::Kind::Knob, "RESID", "residue", 49.0f, 48.0f);
-        p.add(Widget::Kind::Knob, "ELAST", "elastic", 49.0f, 70.0f);
-        p.add(Widget::Kind::Jack, "CAPT", "in:capture", 32.0f, 90.0f);
-        p.add(Widget::Kind::Jack, "ADV", "in:advance", 8.0f, 90.0f);
-        p.add(Widget::Kind::Jack, "RATE", "in:rate_mod", 20.0f, 90.0f);
-        p.add(Widget::Kind::Jack, "A", "out:a", 8.0f, 106.0f);
-        p.add(Widget::Kind::Jack, "B", "out:b", 17.0f, 106.0f);
-        p.add(Widget::Kind::Jack, "C", "out:c", 26.0f, 106.0f);
-        p.add(Widget::Kind::Jack, "D", "out:d", 35.0f, 106.0f);
-        p.add(Widget::Kind::Jack, "FLD", "out:field", 8.0f, 120.0f);
-        p.add(Widget::Kind::Jack, "EVT", "out:event", 21.0f, 120.0f);
+        p.add(Widget::Kind::Display, "field", "", 2.5f, 6.0f, 55.96f);
+        p.add(Widget::Kind::Knob, "RATE", "rate", 14.32f, 27.0f, 12.0f);
+        p.add(Widget::Kind::Knob, "DEPTH", "depth", 34.64f, 27.0f, 12.0f);
+        p.add(Widget::Kind::Knob, "MOMT", "momentum", 12.48f, 45.0f);
+        p.add(Widget::Kind::Knob, "STRD", "stride", 26.48f, 45.0f);
+        p.add(Widget::Kind::Knob, "BIAS", "bias", 40.48f, 45.0f);
+        p.add(Widget::Kind::Knob, "ANCHR", "anchor", 12.48f, 61.0f);
+        p.add(Widget::Kind::Knob, "RESID", "residue", 26.48f, 61.0f);
+        p.add(Widget::Kind::Knob, "ELAST", "elastic", 40.48f, 61.0f);
+        p.add(Widget::Kind::Jack, "ADV", "in:advance", 16.48f, 78.0f);
+        p.add(Widget::Kind::Jack, "RATE", "in:rate_mod", 30.48f, 78.0f);
+        p.add(Widget::Kind::Jack, "CAPT", "in:capture", 44.48f, 78.0f);
+        p.add(Widget::Kind::Jack, "A", "out:a", 11.43f, 94.0f);
+        p.add(Widget::Kind::Jack, "B", "out:b", 24.13f, 94.0f);
+        p.add(Widget::Kind::Jack, "C", "out:c", 36.83f, 94.0f);
+        p.add(Widget::Kind::Jack, "D", "out:d", 49.53f, 94.0f);
+        p.add(Widget::Kind::Jack, "FLD", "out:field", 24.13f, 110.0f);
+        p.add(Widget::Kind::Jack, "EVT", "out:event", 36.83f, 110.0f);
         return p;
     }
 

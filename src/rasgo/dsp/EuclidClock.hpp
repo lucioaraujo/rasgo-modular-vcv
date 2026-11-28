@@ -93,31 +93,34 @@ public:
     Panel panel() const override {
         // coordenadas em mm; painel 3U (128,5 mm) x hp*5,08 mm
         Panel p;
+        // Personalização (autor, 28/11/2026: "avance nesses 10 que sugeriu e
+        // no shifter também"; jacks embaixo): o BPM grande
+        // no centro, MULT e SWING nos lados; o padrão euclidiano na fileira de baixo.
         p.hp = 16;
         p.add(Widget::Kind::Label, "CLOCK", "", 2.5f, 2.0f);
-        p.add(Widget::Kind::Display, "pattern", "", 2.5f, 6.0f, 76.3f);
-        p.add(Widget::Kind::Knob, "BPM", "bpm", 7.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "MULT", "mult", 22.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "LEN", "length", 37.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "FILL", "fill", 52.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "ROT", "rotate", 67.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "SWING", "swing", 7.0f, 52.0f);
-        p.add(Widget::Kind::Knob, "DRIFT", "drift", 22.0f, 52.0f);
-        p.add(Widget::Kind::Knob, "GATE", "gate_len", 37.0f, 52.0f);
-        p.add(Widget::Kind::Knob, "ACC-A", "accent_a", 52.0f, 52.0f);
-        p.add(Widget::Kind::Knob, "ACC-B", "accent_b", 67.0f, 52.0f);
-        p.add(Widget::Kind::Toggle, "AND", "accent_mode", 7.0f, 76.0f);
-        p.add(Widget::Kind::Knob, "FEEL", "feel", 22.0f, 76.0f);
-        p.add(Widget::Kind::Knob, "PHAS", "phasing", 37.0f, 76.0f);
-        p.add(Widget::Kind::Jack, "EXT", "in:ext_clock", 5.0f, 100.0f);
-        p.add(Widget::Kind::Jack, "RST", "in:reset", 17.0f, 100.0f);
-        p.add(Widget::Kind::Jack, "BPM", "in:bpm_mod", 29.0f, 100.0f);
-        p.add(Widget::Kind::Jack, "RATE", "in:rate", 41.0f, 100.0f);
-        p.add(Widget::Kind::Jack, "CLK", "out:clock", 5.0f, 116.0f);
-        p.add(Widget::Kind::Jack, "EUC", "out:euclid", 17.0f, 116.0f);
-        p.add(Widget::Kind::Jack, "ACC", "out:accent", 29.0f, 116.0f);
-        p.add(Widget::Kind::Jack, "FASE", "out:phased", 41.0f, 116.0f);
-        p.add(Widget::Kind::Jack, "MET", "out:metric", 53.0f, 116.0f);
+        p.add(Widget::Kind::Display, "pattern", "", 2.5f, 6.0f, 76.28f);
+        p.add(Widget::Kind::Knob, "MULT", "mult", 17.64f, 31.0f);
+        p.add(Widget::Kind::Knob, "BPM", "bpm", 33.64f, 27.0f, 14.0f);   // o herói
+        p.add(Widget::Kind::Knob, "SWING", "swing", 55.64f, 31.0f);
+        p.add(Widget::Kind::Knob, "LEN", "length", 8.64f, 50.0f);
+        p.add(Widget::Kind::Knob, "FILL", "fill", 22.64f, 50.0f);
+        p.add(Widget::Kind::Knob, "ROT", "rotate", 36.64f, 50.0f);
+        p.add(Widget::Kind::Knob, "GATE", "gate_len", 50.64f, 50.0f);
+        p.add(Widget::Kind::Knob, "DRIFT", "drift", 64.64f, 50.0f);
+        p.add(Widget::Kind::Knob, "ACC-A", "accent_a", 8.64f, 66.0f);
+        p.add(Widget::Kind::Knob, "ACC-B", "accent_b", 22.64f, 66.0f);
+        p.add(Widget::Kind::Knob, "FEEL", "feel", 36.64f, 66.0f);
+        p.add(Widget::Kind::Knob, "PHAS", "phasing", 50.64f, 66.0f);
+        p.add(Widget::Kind::Toggle, "AND", "accent_mode", 66.64f, 68.0f);
+        p.add(Widget::Kind::Jack, "EXT", "in:ext_clock", 21.59f, 92.0f);
+        p.add(Widget::Kind::Jack, "RST", "in:reset", 34.29f, 92.0f);
+        p.add(Widget::Kind::Jack, "BPM", "in:bpm_mod", 46.99f, 92.0f);
+        p.add(Widget::Kind::Jack, "RATE", "in:rate", 59.69f, 92.0f);
+        p.add(Widget::Kind::Jack, "CLK", "out:clock", 15.24f, 110.0f);
+        p.add(Widget::Kind::Jack, "EUC", "out:euclid", 27.94f, 110.0f);
+        p.add(Widget::Kind::Jack, "ACC", "out:accent", 40.64f, 110.0f);
+        p.add(Widget::Kind::Jack, "FASE", "out:phased", 53.34f, 110.0f);
+        p.add(Widget::Kind::Jack, "MET", "out:metric", 66.04f, 110.0f);
         return p;
     }
 

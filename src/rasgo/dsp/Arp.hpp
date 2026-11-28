@@ -55,23 +55,26 @@ public:
         Panel p;
         // 10 HP (era 16 — pedido do autor, 8/11: largo demais). O Display
         // "arp" mostra as notas rolando (a altura, com os gates em destaque).
+        // Personalização (autor, 28/11/2026: "avance nesses 10 que sugeriu e
+        // no shifter também"; jacks embaixo): o acorde
+        // (CHORD) grande no centro; inversão e oitavas nos lados.
         p.hp = 10;
         p.add(Widget::Kind::Label, "ARP", "", 2.5f, 2.0f);
-        p.add(Widget::Kind::Display, "arp", "", 2.5f, 6.0f, 45.8f);
-        p.add(Widget::Kind::Knob, "CHORD", "chord", 5.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "INV", "inversion", 20.5f, 30.0f);
-        p.add(Widget::Kind::Knob, "OCT", "octaves", 36.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "MODE", "mode", 5.0f, 50.0f);
-        p.add(Widget::Kind::Knob, "SKIP", "skip", 20.5f, 50.0f);
-        p.add(Widget::Kind::Knob, "RATE", "rate", 36.0f, 50.0f);
-        p.add(Widget::Kind::Knob, "GATE", "gate_len", 5.0f, 70.0f);
-        p.add(Widget::Kind::Jack, "CLK", "in:clock", 7.0f, 96.0f);
-        p.add(Widget::Kind::Jack, "RST", "in:reset", 19.0f, 96.0f);
-        p.add(Widget::Kind::Jack, "ROOT", "in:root", 31.0f, 96.0f);
-        p.add(Widget::Kind::Jack, "CHD", "in:chord_cv", 43.0f, 96.0f);
-        p.add(Widget::Kind::Jack, "PTCH", "out:pitch", 7.0f, 116.0f);
-        p.add(Widget::Kind::Jack, "GT", "out:gate", 19.0f, 116.0f);
-        p.add(Widget::Kind::Jack, "EOS", "out:eos", 31.0f, 116.0f);
+        p.add(Widget::Kind::Display, "arp", "", 2.5f, 6.0f, 45.80f);
+        p.add(Widget::Kind::Knob, "INV", "inversion", 5.40f, 31.0f);
+        p.add(Widget::Kind::Knob, "CHORD", "chord", 18.40f, 27.0f, 14.0f);   // o herói
+        p.add(Widget::Kind::Knob, "OCT", "octaves", 37.40f, 31.0f);
+        p.add(Widget::Kind::Knob, "MODE", "mode", 7.40f, 52.0f);
+        p.add(Widget::Kind::Knob, "SKIP", "skip", 21.40f, 52.0f);
+        p.add(Widget::Kind::Knob, "RATE", "rate", 35.40f, 52.0f);
+        p.add(Widget::Kind::Knob, "GATE", "gate_len", 21.40f, 68.0f);
+        p.add(Widget::Kind::Jack, "CLK", "in:clock", 6.35f, 92.0f);
+        p.add(Widget::Kind::Jack, "RST", "in:reset", 19.05f, 92.0f);
+        p.add(Widget::Kind::Jack, "ROOT", "in:root", 31.75f, 92.0f);
+        p.add(Widget::Kind::Jack, "CHD", "in:chord_cv", 44.45f, 92.0f);
+        p.add(Widget::Kind::Jack, "PTCH", "out:pitch", 12.70f, 110.0f);
+        p.add(Widget::Kind::Jack, "GT", "out:gate", 25.40f, 110.0f);
+        p.add(Widget::Kind::Jack, "EOS", "out:eos", 38.10f, 110.0f);
         return p;
     }
 

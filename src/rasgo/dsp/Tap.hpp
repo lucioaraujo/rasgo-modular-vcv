@@ -45,17 +45,19 @@ public:
 
     Panel panel() const override {
         Panel p;
+        // Revisão de painel (autor, 26/11/2026): colunas pelo centro, knobs e
+        // jacks nas mesmas colunas, saídas embaixo no centro (G1–G4).
         p.hp = 8;
         p.add(Widget::Kind::Label, "TAP", "", 2.5f, 2.0f);
-        p.add(Widget::Kind::Display, "tap", "", 2.5f, 6.0f, 35.6f);
-        p.add(Widget::Kind::Knob, "COMP", "beats", 8.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "DISP", "spread", 26.0f, 30.0f);
-        p.add(Widget::Kind::Jack, "TAP", "in:tap", 8.0f, 92.0f);
-        p.add(Widget::Kind::Jack, "RST", "in:reset", 26.0f, 92.0f);
-        p.add(Widget::Kind::Jack, "CLK", "out:clock", 6.0f, 106.0f);
-        p.add(Widget::Kind::Jack, "UM", "out:one", 18.0f, 106.0f);
-        p.add(Widget::Kind::Jack, "BPM", "out:bpm", 30.0f, 106.0f);
-        p.add(Widget::Kind::Jack, "TRAV", "out:locked", 18.0f, 120.0f);
+        p.add(Widget::Kind::Display, "tap", "", 2.5f, 6.0f, 35.64f);
+        p.add(Widget::Kind::Knob, "COMP", "beats", 9.97f, 30.0f);
+        p.add(Widget::Kind::Knob, "DISP", "spread", 22.67f, 30.0f);
+        p.add(Widget::Kind::Jack, "TAP", "in:tap", 13.97f, 74.0f);
+        p.add(Widget::Kind::Jack, "RST", "in:reset", 26.67f, 74.0f);
+        p.add(Widget::Kind::Jack, "CLK", "out:clock", 7.62f, 92.0f);
+        p.add(Widget::Kind::Jack, "UM", "out:one", 20.32f, 92.0f);
+        p.add(Widget::Kind::Jack, "BPM", "out:bpm", 33.02f, 92.0f);
+        p.add(Widget::Kind::Jack, "TRAV", "out:locked", 20.32f, 110.0f);
         return p;
     }
 

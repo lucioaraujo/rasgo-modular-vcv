@@ -53,27 +53,30 @@ public:
 
     Panel panel() const override {
         Panel p;
+        // Personalização (autor, 28/11/2026: "avance nesses 10 que sugeriu e
+        // no shifter também"; jacks embaixo): o que muda
+        // e o que se gasta: MUT e ERODE em par de 12 mm.
         p.hp = 12;
         p.add(Widget::Kind::Label, "VOLTA", "", 2.5f, 2.0f);
-        p.add(Widget::Kind::Display, "register", "", 2.5f, 6.0f, 56.0f);
-        p.add(Widget::Kind::Knob, "RATE", "rate", 7.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "LEN", "length", 21.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "MUT", "mutate", 35.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "ERODE", "erode", 49.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "MEM", "protect", 7.0f, 52.0f);
-        p.add(Widget::Kind::Knob, "RANGE", "range", 21.0f, 52.0f);
-        p.add(Widget::Kind::Knob, "STEPS", "steps", 35.0f, 52.0f);
-        p.add(Widget::Kind::Knob, "OFST", "offset", 49.0f, 52.0f);
-        p.add(Widget::Kind::Knob, "SEED", "seed", 7.0f, 74.0f);
-        p.add(Widget::Kind::Jack, "CLK", "in:clock", 5.0f, 96.0f);
-        p.add(Widget::Kind::Jack, "RST", "in:reset", 17.0f, 96.0f);
-        p.add(Widget::Kind::Jack, "NEW", "in:new", 29.0f, 96.0f);
-        p.add(Widget::Kind::Jack, "MUT", "in:mut_cv", 41.0f, 96.0f);
-        p.add(Widget::Kind::Jack, "ERO", "in:ero_cv", 53.0f, 96.0f);
-        p.add(Widget::Kind::Jack, "CV", "out:cv", 5.0f, 116.0f);
-        p.add(Widget::Kind::Jack, "CV2", "out:cv2", 17.0f, 116.0f);
-        p.add(Widget::Kind::Jack, "PULSE", "out:pulse", 29.0f, 116.0f);
-        p.add(Widget::Kind::Jack, "POS", "out:pos", 41.0f, 116.0f);
+        p.add(Widget::Kind::Display, "register", "", 2.5f, 6.0f, 55.96f);
+        p.add(Widget::Kind::Knob, "MUT", "mutate", 14.32f, 27.0f, 12.0f);
+        p.add(Widget::Kind::Knob, "ERODE", "erode", 34.64f, 27.0f, 12.0f);
+        p.add(Widget::Kind::Knob, "RATE", "rate", 7.43f, 46.0f);
+        p.add(Widget::Kind::Knob, "LEN", "length", 20.13f, 46.0f);
+        p.add(Widget::Kind::Knob, "MEM", "protect", 32.83f, 46.0f);
+        p.add(Widget::Kind::Knob, "SEED", "seed", 45.53f, 46.0f);
+        p.add(Widget::Kind::Knob, "RANGE", "range", 12.48f, 62.0f);
+        p.add(Widget::Kind::Knob, "STEPS", "steps", 26.48f, 62.0f);
+        p.add(Widget::Kind::Knob, "OFST", "offset", 40.48f, 62.0f);
+        p.add(Widget::Kind::Jack, "CLK", "in:clock", 8.48f, 92.0f);
+        p.add(Widget::Kind::Jack, "RST", "in:reset", 19.48f, 92.0f);
+        p.add(Widget::Kind::Jack, "NEW", "in:new", 30.48f, 92.0f);
+        p.add(Widget::Kind::Jack, "MUT", "in:mut_cv", 41.48f, 92.0f);
+        p.add(Widget::Kind::Jack, "ERO", "in:ero_cv", 52.48f, 92.0f);
+        p.add(Widget::Kind::Jack, "CV", "out:cv", 11.43f, 110.0f);
+        p.add(Widget::Kind::Jack, "CV2", "out:cv2", 24.13f, 110.0f);
+        p.add(Widget::Kind::Jack, "PULSE", "out:pulse", 36.83f, 110.0f);
+        p.add(Widget::Kind::Jack, "POS", "out:pos", 49.53f, 110.0f);
         return p;
     }
 

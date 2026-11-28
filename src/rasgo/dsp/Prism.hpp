@@ -52,18 +52,23 @@ public:
 
     Panel panel() const override {
         Panel p;
+        // Revisão de painel (autor, 26/11/2026): colunas pelo centro, knobs e
+        // jacks nas mesmas colunas, saídas embaixo no centro (G1–G4).
+        // Personalização (autor, 28/11/2026: "avance nos 16 módulos que ainda
+        // faltam personalizar"; jacks embaixo): a dispersão
+        // (DISP) grande no centro; CURVE e SPRD nos lados.
         p.hp = 10;
         p.add(Widget::Kind::Label, "PRISM", "", 2.5f, 2.0f);
-        p.add(Widget::Kind::Display, "prism", "", 2.5f, 6.0f, 45.8f);
-        p.add(Widget::Kind::Knob, "DISP", "disp", 5.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "CURVE", "curve", 20.5f, 30.0f);
-        p.add(Widget::Kind::Knob, "SPRD", "spread", 36.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "FDBK", "feedback", 5.0f, 50.0f);
-        p.add(Widget::Kind::Knob, "MIX", "mix", 20.5f, 50.0f);
-        p.add(Widget::Kind::Jack, "IN", "in:in", 7.0f, 96.0f);
-        p.add(Widget::Kind::Jack, "DISP", "in:disp_cv", 19.0f, 96.0f);
-        p.add(Widget::Kind::Jack, "OUT", "out:out", 7.0f, 116.0f);
-        p.add(Widget::Kind::Jack, "WET", "out:wet", 19.0f, 116.0f);
+        p.add(Widget::Kind::Display, "prism", "", 2.5f, 6.0f, 45.80f);
+        p.add(Widget::Kind::Knob, "CURVE", "curve", 5.40f, 31.0f);
+        p.add(Widget::Kind::Knob, "DISP", "disp", 18.40f, 27.0f, 14.0f);   // o herói
+        p.add(Widget::Kind::Knob, "SPRD", "spread", 37.40f, 31.0f);
+        p.add(Widget::Kind::Knob, "FDBK", "feedback", 14.40f, 52.0f);
+        p.add(Widget::Kind::Knob, "MIX", "mix", 28.40f, 52.0f);
+        p.add(Widget::Kind::Jack, "IN", "in:in", 19.05f, 92.0f);
+        p.add(Widget::Kind::Jack, "DISP", "in:disp_cv", 31.75f, 92.0f);
+        p.add(Widget::Kind::Jack, "OUT", "out:out", 19.05f, 110.0f);
+        p.add(Widget::Kind::Jack, "WET", "out:wet", 31.75f, 110.0f);
         return p;
     }
 

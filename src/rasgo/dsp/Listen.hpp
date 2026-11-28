@@ -32,23 +32,25 @@ public:
 
     Panel panel() const override {
         Panel p;
-        p.hp = 16;
+        // Revisão de painel (autor, 26/11/2026): colunas pelo centro, knobs e
+        // jacks nas mesmas colunas, saídas embaixo no centro (G1–G4).
+        p.hp = 12;
         p.add(Widget::Kind::Label, "LISTEN", "", 2.5f, 2.0f);
-        p.add(Widget::Kind::Display, "bands", "", 2.5f, 7.0f, 75.0f);
-        p.add(Widget::Kind::Knob, "LOW", "low_cut", 9.0f, 32.0f);
-        p.add(Widget::Kind::Knob, "HIGH", "high_cut", 33.0f, 32.0f);
-        p.add(Widget::Kind::Knob, "RESP", "response", 57.0f, 32.0f);
-        p.add(Widget::Kind::Knob, "SENS", "sens", 9.0f, 55.0f);
-        p.add(Widget::Kind::Knob, "FLOOR", "floor", 33.0f, 55.0f);
-        p.add(Widget::Kind::Knob, "REARM", "rearm", 57.0f, 55.0f);
-        p.add(Widget::Kind::Jack, "IN", "in:in", 8.0f, 83.0f);
-        p.add(Widget::Kind::Jack, "THRU", "out:thru", 30.0f, 83.0f);
-        p.add(Widget::Kind::Jack, "LOW", "out:low", 8.0f, 104.0f);
-        p.add(Widget::Kind::Jack, "MID", "out:mid", 30.0f, 104.0f);
-        p.add(Widget::Kind::Jack, "HIGH", "out:high", 52.0f, 104.0f);
-        p.add(Widget::Kind::Jack, "L-HIT", "out:low_hit", 8.0f, 121.0f);
-        p.add(Widget::Kind::Jack, "M-HIT", "out:mid_hit", 30.0f, 121.0f);
-        p.add(Widget::Kind::Jack, "H-HIT", "out:high_hit", 52.0f, 121.0f);
+        p.add(Widget::Kind::Display, "bands", "", 2.5f, 6.0f, 55.96f);
+        p.add(Widget::Kind::Knob, "LOW", "low_cut", 12.48f, 28.0f);
+        p.add(Widget::Kind::Knob, "HIGH", "high_cut", 26.48f, 28.0f);
+        p.add(Widget::Kind::Knob, "RESP", "response", 40.48f, 28.0f);
+        p.add(Widget::Kind::Knob, "SENS", "sens", 12.48f, 48.0f);
+        p.add(Widget::Kind::Knob, "FLOOR", "floor", 26.48f, 48.0f);
+        p.add(Widget::Kind::Knob, "REARM", "rearm", 40.48f, 48.0f);
+        p.add(Widget::Kind::Jack, "IN", "in:in", 16.48f, 74.0f);
+        p.add(Widget::Kind::Jack, "THRU", "out:thru", 44.48f, 74.0f);
+        p.add(Widget::Kind::Jack, "LOW", "out:low", 16.48f, 92.0f);
+        p.add(Widget::Kind::Jack, "MID", "out:mid", 30.48f, 92.0f);
+        p.add(Widget::Kind::Jack, "HIGH", "out:high", 44.48f, 92.0f);
+        p.add(Widget::Kind::Jack, "L-HIT", "out:low_hit", 16.48f, 110.0f);
+        p.add(Widget::Kind::Jack, "M-HIT", "out:mid_hit", 30.48f, 110.0f);
+        p.add(Widget::Kind::Jack, "H-HIT", "out:high_hit", 44.48f, 110.0f);
         return p;
     }
 

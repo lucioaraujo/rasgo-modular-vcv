@@ -55,22 +55,25 @@ public:
 
     Panel panel() const override {
         Panel p;
+        // Personalização (autor, 28/11/2026: "avance nos 16 módulos que ainda
+        // faltam personalizar"; jacks embaixo): o giro: RATE
+        // grande no centro, TYPE e DEPTH nos lados.
         p.hp = 12;
         p.add(Widget::Kind::Label, "SWIRL", "", 2.5f, 2.0f);
-        p.add(Widget::Kind::Display, "swirl", "", 2.5f, 6.0f, 56.0f);
-        p.add(Widget::Kind::Knob, "TYPE", "type", 8.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "RATE", "rate", 24.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "DEPTH", "depth", 40.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "FBK", "feedback", 8.0f, 54.0f);
-        p.add(Widget::Kind::Knob, "TONE", "tone", 24.0f, 54.0f);
-        p.add(Widget::Kind::Knob, "SPRD", "spread", 40.0f, 54.0f);
-        p.add(Widget::Kind::Knob, "AGE", "age", 8.0f, 78.0f);
-        p.add(Widget::Kind::Knob, "MIX", "mix", 24.0f, 78.0f);
-        p.add(Widget::Kind::Jack, "IN", "in:in", 8.0f, 100.0f);
-        p.add(Widget::Kind::Jack, "RTM", "in:rate_mod", 21.0f, 100.0f);
-        p.add(Widget::Kind::Jack, "MXM", "in:mix_mod", 34.0f, 100.0f);
-        p.add(Widget::Kind::Jack, "L", "out:l", 8.0f, 120.0f);
-        p.add(Widget::Kind::Jack, "R", "out:r", 21.0f, 120.0f);
+        p.add(Widget::Kind::Display, "swirl", "", 2.5f, 6.0f, 55.96f);
+        p.add(Widget::Kind::Knob, "TYPE", "type", 7.48f, 31.0f);
+        p.add(Widget::Kind::Knob, "RATE", "rate", 23.48f, 27.0f, 14.0f);   // o herói
+        p.add(Widget::Kind::Knob, "DEPTH", "depth", 45.48f, 31.0f);
+        p.add(Widget::Kind::Knob, "FBK", "feedback", 12.48f, 50.0f);
+        p.add(Widget::Kind::Knob, "TONE", "tone", 26.48f, 50.0f);
+        p.add(Widget::Kind::Knob, "SPRD", "spread", 40.48f, 50.0f);
+        p.add(Widget::Kind::Knob, "AGE", "age", 19.48f, 66.0f);
+        p.add(Widget::Kind::Knob, "MIX", "mix", 33.48f, 66.0f);
+        p.add(Widget::Kind::Jack, "IN", "in:in", 17.78f, 92.0f);
+        p.add(Widget::Kind::Jack, "RTM", "in:rate_mod", 30.48f, 92.0f);
+        p.add(Widget::Kind::Jack, "MXM", "in:mix_mod", 43.18f, 92.0f);
+        p.add(Widget::Kind::Jack, "L", "out:l", 24.13f, 110.0f);
+        p.add(Widget::Kind::Jack, "R", "out:r", 36.83f, 110.0f);
         return p;
     }
 

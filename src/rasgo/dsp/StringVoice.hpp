@@ -58,21 +58,27 @@ public:
     Panel panel() const override {
         // coordenadas em mm; painel 3U (128,5 mm) x hp*5,08 mm
         Panel p;
-        p.hp = 12;
+        // Revisão de painel (autor, 26/11/2026): colunas pelo centro, knobs e jacks
+        // nas mesmas colunas, rótulos com folga; mais estreito onde sobrava (G1–G4).
+        // Arquétipo das FONTES (autor, 26/11/2026: "variar as ideias de
+        // distribuição de acordo com o módulo", "o layout pode trazer algo
+        // do conceito"): o knob herói (14 mm) no centro, com o
+        // corpo da corda (DECAY e DAMP) nos lados; a excitação embaixo.
+        p.hp = 11;
         p.add(Widget::Kind::Label, "STRING", "", 2.5f, 2.0f);
-        p.add(Widget::Kind::Display, "string", "", 2.5f, 6.0f, 56.0f);
-        p.add(Widget::Kind::Knob, "FREQ", "freq", 7.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "DECAY", "decay", 21.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "DAMP", "damping", 35.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "POS", "position", 49.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "EXCIT", "exciter", 7.0f, 52.0f);
-        p.add(Widget::Kind::Knob, "DRIVE", "drive", 21.0f, 52.0f);
-        p.add(Widget::Kind::Knob, "MIX", "mix", 35.0f, 52.0f);
-        p.add(Widget::Kind::Jack, "IN", "in:in", 5.0f, 100.0f);
-        p.add(Widget::Kind::Jack, "PLK", "in:pluck", 17.0f, 100.0f);
-        p.add(Widget::Kind::Jack, "1V/O", "in:freq_mod", 29.0f, 100.0f);
-        p.add(Widget::Kind::Jack, "DMP", "in:damp_mod", 41.0f, 100.0f);
-        p.add(Widget::Kind::Jack, "OUT", "out:out", 5.0f, 116.0f);
+        p.add(Widget::Kind::Display, "string", "", 2.5f, 6.0f, 50.88f);
+        p.add(Widget::Kind::Knob, "DECAY", "decay", 6.94f, 31.0f);
+        p.add(Widget::Kind::Knob, "FREQ", "freq", 20.94f, 27.0f, 14.0f);   // o herói
+        p.add(Widget::Kind::Knob, "DAMP", "damping", 40.94f, 31.0f);
+        p.add(Widget::Kind::Knob, "POS", "position", 9.94f, 50.0f);
+        p.add(Widget::Kind::Knob, "EXCIT", "exciter", 23.94f, 50.0f);
+        p.add(Widget::Kind::Knob, "DRIVE", "drive", 37.94f, 50.0f);
+        p.add(Widget::Kind::Knob, "MIX", "mix", 23.94f, 66.0f);
+        p.add(Widget::Kind::Jack, "IN", "in:in", 8.89f, 92.0f);
+        p.add(Widget::Kind::Jack, "PLK", "in:pluck", 21.59f, 92.0f);
+        p.add(Widget::Kind::Jack, "1V/O", "in:freq_mod", 34.29f, 92.0f);
+        p.add(Widget::Kind::Jack, "DMP", "in:damp_mod", 46.99f, 92.0f);
+        p.add(Widget::Kind::Jack, "OUT", "out:out", 27.94f, 110.0f);
         return p;
     }
 

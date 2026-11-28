@@ -57,21 +57,26 @@ public:
 
     Panel panel() const override {
         Panel p;
-        p.hp = 14;
+        // Revisão de painel (autor, 26/11/2026): colunas pelo centro, knobs e
+        // jacks nas mesmas colunas, saídas embaixo no centro (G1–G4).
+        // Personalização (autor, 27/11/2026: "avance na personalização dos
+        // módulos"; jacks embaixo): a sala, SIZE
+        // (o tamanho) e DECAY (a cauda), em par de 12 mm.
+        p.hp = 12;
         p.add(Widget::Kind::Label, "HALL", "", 2.5f, 2.0f);
-        p.add(Widget::Kind::Display, "tail", "", 2.5f, 6.0f, 66.0f);
-        p.add(Widget::Kind::Knob, "SIZE", "size", 7.0f, 28.0f);
-        p.add(Widget::Kind::Knob, "DECAY", "decay", 24.0f, 28.0f);
-        p.add(Widget::Kind::Knob, "DAMP", "damp", 41.0f, 28.0f);
-        p.add(Widget::Kind::Knob, "MOD", "mod", 58.0f, 28.0f);
-        p.add(Widget::Kind::Knob, "PRE", "pre", 7.0f, 50.0f);
-        p.add(Widget::Kind::Knob, "MIX", "mix", 24.0f, 50.0f);
-        p.add(Widget::Kind::Jack, "IN", "in:in", 8.0f, 92.0f);
-        p.add(Widget::Kind::Jack, "SIZE", "in:size", 22.0f, 92.0f);
-        p.add(Widget::Kind::Jack, "DEC", "in:decay", 38.0f, 92.0f);
-        p.add(Widget::Kind::Jack, "FRZ", "in:freeze", 52.0f, 92.0f);
-        p.add(Widget::Kind::Jack, "L", "out:l", 8.0f, 114.0f);
-        p.add(Widget::Kind::Jack, "R", "out:r", 20.0f, 114.0f);
+        p.add(Widget::Kind::Display, "tail", "", 2.5f, 6.0f, 55.96f);
+        p.add(Widget::Kind::Knob, "SIZE", "size", 14.32f, 27.0f, 12.0f);
+        p.add(Widget::Kind::Knob, "DECAY", "decay", 34.64f, 27.0f, 12.0f);
+        p.add(Widget::Kind::Knob, "DAMP", "damp", 12.48f, 46.0f);
+        p.add(Widget::Kind::Knob, "MOD", "mod", 26.48f, 46.0f);
+        p.add(Widget::Kind::Knob, "PRE", "pre", 40.48f, 46.0f);
+        p.add(Widget::Kind::Knob, "MIX", "mix", 26.48f, 64.0f);
+        p.add(Widget::Kind::Jack, "IN", "in:in", 9.48f, 92.0f);
+        p.add(Widget::Kind::Jack, "SIZE", "in:size", 23.48f, 92.0f);
+        p.add(Widget::Kind::Jack, "DEC", "in:decay", 37.48f, 92.0f);
+        p.add(Widget::Kind::Jack, "FRZ", "in:freeze", 51.48f, 92.0f);
+        p.add(Widget::Kind::Jack, "L", "out:l", 23.48f, 110.0f);
+        p.add(Widget::Kind::Jack, "R", "out:r", 37.48f, 110.0f);
         return p;
     }
 

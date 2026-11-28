@@ -59,24 +59,27 @@ public:
 
     Panel panel() const override {
         Panel p;
+        // Personalização (autor, 28/11/2026: "avance nos 16 módulos que ainda
+        // faltam personalizar"; jacks embaixo): os quatro
+        // meios que a luz atravessa: N1 a N4 em sliders verticais, lado a lado.
         p.hp = 10;
         p.add(Widget::Kind::Label, "REFRACT", "", 2.5f, 2.0f);
-        p.add(Widget::Kind::Display, "refract", "", 2.5f, 6.0f, 45.8f);
-        p.add(Widget::Kind::Knob, "N1", "n1", 5.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "N2", "n2", 20.5f, 30.0f);
-        p.add(Widget::Kind::Knob, "N3", "n3", 36.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "N4", "n4", 5.0f, 50.0f);
-        p.add(Widget::Kind::Knob, "RATE", "rate", 20.5f, 50.0f);
-        p.add(Widget::Kind::Knob, "RANGE", "range", 36.0f, 50.0f);
-        p.add(Widget::Kind::Knob, "SHIM", "shimmer", 5.0f, 70.0f);
-        p.add(Widget::Kind::Jack, "ANG", "in:angle_cv", 6.0f, 96.0f);
-        p.add(Widget::Kind::Jack, "IDX", "in:index_cv", 18.0f, 96.0f);
-        p.add(Widget::Kind::Jack, "TIR", "out:tir", 31.0f, 96.0f);
-        p.add(Widget::Kind::Jack, "EXIT", "out:exit", 44.0f, 96.0f);
-        p.add(Widget::Kind::Jack, "A1", "out:a1", 6.0f, 116.0f);
-        p.add(Widget::Kind::Jack, "A2", "out:a2", 18.0f, 116.0f);
-        p.add(Widget::Kind::Jack, "A3", "out:a3", 31.0f, 116.0f);
-        p.add(Widget::Kind::Jack, "A4", "out:a4", 44.0f, 116.0f);
+        p.add(Widget::Kind::Display, "refract", "", 2.5f, 6.0f, 45.80f);
+        p.add(Widget::Kind::Slider, "N1", "n1", 4.00f, 26.0f);
+        p.add(Widget::Kind::Slider, "N2", "n2", 15.60f, 26.0f);
+        p.add(Widget::Kind::Slider, "N3", "n3", 27.20f, 26.0f);
+        p.add(Widget::Kind::Slider, "N4", "n4", 38.80f, 26.0f);
+        p.add(Widget::Kind::Knob, "RATE", "rate", 7.40f, 67.0f);
+        p.add(Widget::Kind::Knob, "RANGE", "range", 21.40f, 67.0f);
+        p.add(Widget::Kind::Knob, "SHIM", "shimmer", 35.40f, 67.0f);
+        p.add(Widget::Kind::Jack, "ANG", "in:angle_cv", 6.35f, 92.0f);
+        p.add(Widget::Kind::Jack, "IDX", "in:index_cv", 19.05f, 92.0f);
+        p.add(Widget::Kind::Jack, "TIR", "out:tir", 31.75f, 92.0f);
+        p.add(Widget::Kind::Jack, "EXIT", "out:exit", 44.45f, 92.0f);
+        p.add(Widget::Kind::Jack, "A1", "out:a1", 6.35f, 110.0f);
+        p.add(Widget::Kind::Jack, "A2", "out:a2", 19.05f, 110.0f);
+        p.add(Widget::Kind::Jack, "A3", "out:a3", 31.75f, 110.0f);
+        p.add(Widget::Kind::Jack, "A4", "out:a4", 44.45f, 110.0f);
         return p;
     }
 

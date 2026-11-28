@@ -72,22 +72,25 @@ public:
         // passe de ergonomia 2026-09-06: display cheio; saída "SCALE"
         // (5 letras) agora com espaço; entradas realinhadas.
         Panel p;
+        // Personalização (autor, 28/11/2026: "avance nesses 10 que sugeriu e
+        // no shifter também"; jacks embaixo): o centro
+        // tonal em movimento: MOVE e RATE em par de 12 mm.
         p.hp = 10;
         p.add(Widget::Kind::Label, "HARMONY", "", 2.5f, 2.0f);
-        p.add(Widget::Kind::Display, "keycenter", "", 2.5f, 6.0f, 45.8f);
-        p.add(Widget::Kind::Knob, "MOVE", "movement", 6.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "RATE", "rate", 22.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "ROOT", "root_start", 38.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "S-LO", "scale_lo", 6.0f, 54.0f);
-        p.add(Widget::Kind::Knob, "S-HI", "scale_hi", 22.0f, 54.0f);
-        p.add(Widget::Kind::Knob, "HOLD", "hold", 38.0f, 54.0f);
-        p.add(Widget::Kind::Knob, "CICLO", "nr_cycle", 6.0f, 76.0f);
-        p.add(Widget::Kind::Jack, "ADV", "in:advance", 8.0f, 100.0f);
-        p.add(Widget::Kind::Jack, "RST", "in:reset", 20.0f, 100.0f);
-        p.add(Widget::Kind::Jack, "ROOT", "out:root", 8.0f, 118.0f);
-        p.add(Widget::Kind::Jack, "SCALE", "out:scale", 22.0f, 118.0f);
-        p.add(Widget::Kind::Jack, "CHG", "out:change", 36.0f, 118.0f);
-        p.add(Widget::Kind::Jack, "OP", "out:op", 36.0f, 100.0f);
+        p.add(Widget::Kind::Display, "keycenter", "", 2.5f, 6.0f, 45.80f);
+        p.add(Widget::Kind::Knob, "MOVE", "movement", 9.24f, 27.0f, 12.0f);
+        p.add(Widget::Kind::Knob, "RATE", "rate", 29.56f, 27.0f, 12.0f);
+        p.add(Widget::Kind::Knob, "ROOT", "root_start", 7.40f, 46.0f);
+        p.add(Widget::Kind::Knob, "S-LO", "scale_lo", 21.40f, 46.0f);
+        p.add(Widget::Kind::Knob, "S-HI", "scale_hi", 35.40f, 46.0f);
+        p.add(Widget::Kind::Knob, "HOLD", "hold", 14.40f, 62.0f);
+        p.add(Widget::Kind::Knob, "CICLO", "nr_cycle", 28.40f, 62.0f);
+        p.add(Widget::Kind::Jack, "ADV", "in:advance", 12.70f, 92.0f);
+        p.add(Widget::Kind::Jack, "RST", "in:reset", 25.40f, 92.0f);
+        p.add(Widget::Kind::Jack, "OP", "out:op", 38.10f, 92.0f);
+        p.add(Widget::Kind::Jack, "ROOT", "out:root", 12.70f, 110.0f);
+        p.add(Widget::Kind::Jack, "SCALE", "out:scale", 25.40f, 110.0f);
+        p.add(Widget::Kind::Jack, "CHG", "out:change", 38.10f, 110.0f);
         return p;
     }
 

@@ -58,23 +58,26 @@ public:
 
     Panel panel() const override {
         Panel p;
+        // Personalização (autor, 27/11/2026: "avance na personalização dos
+        // módulos"; jacks embaixo): o corpo que
+        // ressoa: FREQ grande no centro, DECAY e DAMP nos lados.
         p.hp = 12;
         p.add(Widget::Kind::Label, "RESONATOR", "", 2.5f, 2.0f);
-        p.add(Widget::Kind::Display, "reso", "", 2.5f, 6.0f, 56.0f);
-        p.add(Widget::Kind::Knob, "FREQ", "freq", 8.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "STRC", "structure", 24.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "PRTS", "partials", 40.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "DECAY", "decay", 8.0f, 54.0f);
-        p.add(Widget::Kind::Knob, "DAMP", "damp", 24.0f, 54.0f);
-        p.add(Widget::Kind::Knob, "TILT", "tilt", 40.0f, 54.0f);
-        p.add(Widget::Kind::Knob, "POS", "position", 8.0f, 78.0f);
-        p.add(Widget::Kind::Knob, "MIX", "mix", 24.0f, 78.0f);
-        p.add(Widget::Kind::Jack, "IN", "in:in", 8.0f, 100.0f);
-        p.add(Widget::Kind::Jack, "STRK", "in:strike", 20.0f, 100.0f);
-        p.add(Widget::Kind::Jack, "FQM", "in:freq_mod", 32.0f, 100.0f);
-        p.add(Widget::Kind::Jack, "LOW", "out:low", 8.0f, 120.0f);
-        p.add(Widget::Kind::Jack, "MID", "out:mid", 20.0f, 120.0f);
-        p.add(Widget::Kind::Jack, "HIGH", "out:high", 32.0f, 120.0f);
+        p.add(Widget::Kind::Display, "reso", "", 2.5f, 6.0f, 55.96f);
+        p.add(Widget::Kind::Knob, "DECAY", "decay", 7.48f, 31.0f);
+        p.add(Widget::Kind::Knob, "FREQ", "freq", 23.48f, 27.0f, 14.0f);   // o herói
+        p.add(Widget::Kind::Knob, "DAMP", "damp", 45.48f, 31.0f);
+        p.add(Widget::Kind::Knob, "STRC", "structure", 12.48f, 50.0f);
+        p.add(Widget::Kind::Knob, "PRTS", "partials", 26.48f, 50.0f);
+        p.add(Widget::Kind::Knob, "TILT", "tilt", 40.48f, 50.0f);
+        p.add(Widget::Kind::Knob, "POS", "position", 19.48f, 66.0f);
+        p.add(Widget::Kind::Knob, "MIX", "mix", 33.48f, 66.0f);
+        p.add(Widget::Kind::Jack, "IN", "in:in", 17.78f, 92.0f);
+        p.add(Widget::Kind::Jack, "STRK", "in:strike", 30.48f, 92.0f);
+        p.add(Widget::Kind::Jack, "FQM", "in:freq_mod", 43.18f, 92.0f);
+        p.add(Widget::Kind::Jack, "LOW", "out:low", 17.78f, 110.0f);
+        p.add(Widget::Kind::Jack, "MID", "out:mid", 30.48f, 110.0f);
+        p.add(Widget::Kind::Jack, "HIGH", "out:high", 43.18f, 110.0f);
         return p;
     }
 

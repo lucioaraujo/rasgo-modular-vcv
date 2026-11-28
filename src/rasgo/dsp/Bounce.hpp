@@ -56,22 +56,25 @@ public:
 
     Panel panel() const override {
         Panel p;
+        // Personalização (autor, 28/11/2026: "avance nos 16 módulos que ainda
+        // faltam personalizar"; jacks embaixo): a GRAV
+        // (o que puxa as bolas) grande no centro; BALLS e ELAST nos lados.
         p.hp = 12;
         p.add(Widget::Kind::Label, "BOUNCE", "", 2.5f, 2.0f);
-        p.add(Widget::Kind::Display, "bounce", "", 2.5f, 6.0f, 56.0f);
-        p.add(Widget::Kind::Knob, "BALLS", "balls", 7.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "GRAV", "gravity", 25.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "ELAST", "elastic", 43.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "SPRD", "spread", 7.0f, 52.0f);
-        p.add(Widget::Kind::Knob, "WIND", "wind", 25.0f, 52.0f);
-        p.add(Widget::Kind::Toggle, "AUTO", "auto", 45.3f, 56.0f);
-        p.add(Widget::Kind::Jack, "DROP", "in:drop", 7.0f, 96.0f);
-        p.add(Widget::Kind::Jack, "GRAV", "in:grav_cv", 19.0f, 96.0f);
-        p.add(Widget::Kind::Jack, "GT", "out:gate", 7.0f, 116.0f);
-        p.add(Widget::Kind::Jack, "ACC", "out:accent", 19.0f, 116.0f);
-        p.add(Widget::Kind::Jack, "H1", "out:h1", 31.0f, 116.0f);
-        p.add(Widget::Kind::Jack, "H2", "out:h2", 43.0f, 116.0f);
-        p.add(Widget::Kind::Jack, "H3", "out:h3", 55.0f, 116.0f);
+        p.add(Widget::Kind::Display, "bounce", "", 2.5f, 6.0f, 55.96f);
+        p.add(Widget::Kind::Knob, "BALLS", "balls", 7.48f, 31.0f);
+        p.add(Widget::Kind::Knob, "GRAV", "gravity", 23.48f, 27.0f, 14.0f);   // o herói
+        p.add(Widget::Kind::Knob, "ELAST", "elastic", 45.48f, 31.0f);
+        p.add(Widget::Kind::Knob, "SPRD", "spread", 19.48f, 50.0f);
+        p.add(Widget::Kind::Knob, "WIND", "wind", 33.48f, 50.0f);
+        p.add(Widget::Kind::Toggle, "AUTO", "auto", 28.48f, 64.0f);
+        p.add(Widget::Kind::Jack, "DROP", "in:drop", 24.13f, 92.0f);
+        p.add(Widget::Kind::Jack, "GRAV", "in:grav_cv", 36.83f, 92.0f);
+        p.add(Widget::Kind::Jack, "GT", "out:gate", 10.48f, 110.0f);
+        p.add(Widget::Kind::Jack, "ACC", "out:accent", 20.48f, 110.0f);
+        p.add(Widget::Kind::Jack, "H1", "out:h1", 30.48f, 110.0f);
+        p.add(Widget::Kind::Jack, "H2", "out:h2", 40.48f, 110.0f);
+        p.add(Widget::Kind::Jack, "H3", "out:h3", 50.48f, 110.0f);
         return p;
     }
 

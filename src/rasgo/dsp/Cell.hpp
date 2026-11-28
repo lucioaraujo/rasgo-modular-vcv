@@ -57,23 +57,26 @@ public:
 
     Panel panel() const override {
         Panel p;
+        // Personalização (autor, 28/11/2026: "avance nesses 10 que sugeriu e
+        // no shifter também"; jacks embaixo): a regra do
+        // autômato (RULE) grande no centro; CELLS e HEAD nos lados.
         p.hp = 10;
         p.add(Widget::Kind::Label, "CELL", "", 2.5f, 2.0f);
-        p.add(Widget::Kind::Display, "cell", "", 2.5f, 6.0f, 45.8f);
-        p.add(Widget::Kind::Knob, "RULE", "rule", 5.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "CELLS", "cells", 20.5f, 30.0f);
-        p.add(Widget::Kind::Knob, "HEAD", "head", 36.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "RATE", "rate", 5.0f, 50.0f);
-        p.add(Widget::Kind::Knob, "MUT", "mutate", 20.5f, 50.0f);
-        p.add(Widget::Kind::Knob, "RANGE", "range", 36.0f, 50.0f);
-        p.add(Widget::Kind::Knob, "GATE", "gate_len", 5.0f, 70.0f);
-        p.add(Widget::Kind::Jack, "CLK", "in:clock", 7.0f, 96.0f);
-        p.add(Widget::Kind::Jack, "RST", "in:reset", 19.0f, 96.0f);
-        p.add(Widget::Kind::Jack, "RULE", "in:rule_cv", 31.0f, 96.0f);
-        p.add(Widget::Kind::Jack, "PTCH", "out:pitch", 7.0f, 116.0f);
-        p.add(Widget::Kind::Jack, "GT", "out:gate", 19.0f, 116.0f);
-        p.add(Widget::Kind::Jack, "DENS", "out:density", 31.0f, 116.0f);
-        p.add(Widget::Kind::Jack, "EOS", "out:eos", 43.0f, 116.0f);
+        p.add(Widget::Kind::Display, "cell", "", 2.5f, 6.0f, 45.80f);
+        p.add(Widget::Kind::Knob, "CELLS", "cells", 5.40f, 31.0f);
+        p.add(Widget::Kind::Knob, "RULE", "rule", 18.40f, 27.0f, 14.0f);   // o herói
+        p.add(Widget::Kind::Knob, "HEAD", "head", 37.40f, 31.0f);
+        p.add(Widget::Kind::Knob, "RATE", "rate", 7.40f, 52.0f);
+        p.add(Widget::Kind::Knob, "MUT", "mutate", 21.40f, 52.0f);
+        p.add(Widget::Kind::Knob, "RANGE", "range", 35.40f, 52.0f);
+        p.add(Widget::Kind::Knob, "GATE", "gate_len", 21.40f, 68.0f);
+        p.add(Widget::Kind::Jack, "CLK", "in:clock", 12.70f, 92.0f);
+        p.add(Widget::Kind::Jack, "RST", "in:reset", 25.40f, 92.0f);
+        p.add(Widget::Kind::Jack, "RULE", "in:rule_cv", 38.10f, 92.0f);
+        p.add(Widget::Kind::Jack, "PTCH", "out:pitch", 6.35f, 110.0f);
+        p.add(Widget::Kind::Jack, "GT", "out:gate", 19.05f, 110.0f);
+        p.add(Widget::Kind::Jack, "DENS", "out:density", 31.75f, 110.0f);
+        p.add(Widget::Kind::Jack, "EOS", "out:eos", 44.45f, 110.0f);
         return p;
     }
 

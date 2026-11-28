@@ -46,22 +46,27 @@ public:
 
     Panel panel() const override {
         Panel p;
+        // Revisão de painel (autor, 26/11/2026): colunas pelo centro, knobs e
+        // jacks nas mesmas colunas, saídas embaixo no centro (G1–G4).
+        // Personalização (autor, 28/11/2026: "avance nos 16 módulos que ainda
+        // faltam personalizar"; jacks embaixo): a fita em
+        // laço: TIME e FBK em par de 12 mm; HOLD e REV embaixo.
         p.hp = 12;
         p.add(Widget::Kind::Label, "LOOPER", "", 2.5f, 2.0f);
-        p.add(Widget::Kind::Display, "echo", "", 2.5f, 6.0f, 56.0f);
-        p.add(Widget::Kind::Knob, "TIME", "time", 8.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "FBK", "feedback", 24.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "AGE", "age", 40.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "MIX", "mix", 8.0f, 54.0f);
-        p.add(Widget::Kind::Knob, "HEADS", "heads", 24.0f, 54.0f);
-        p.add(Widget::Kind::Toggle, "HOLD", "hold", 40.0f, 56.0f);
-        p.add(Widget::Kind::Toggle, "REV", "reverse", 52.0f, 56.0f);
-        p.add(Widget::Kind::Jack, "IN", "in:in", 8.0f, 94.0f);
-        p.add(Widget::Kind::Jack, "TIME", "in:time", 21.0f, 94.0f);
-        p.add(Widget::Kind::Jack, "FRZ", "in:freeze", 34.0f, 94.0f);
-        p.add(Widget::Kind::Jack, "REV", "in:rev", 47.0f, 94.0f);
-        p.add(Widget::Kind::Jack, "OUT", "out:out", 8.0f, 116.0f);
-        p.add(Widget::Kind::Jack, "WET", "out:wet", 21.0f, 116.0f);
+        p.add(Widget::Kind::Display, "echo", "", 2.5f, 6.0f, 55.96f);
+        p.add(Widget::Kind::Knob, "TIME", "time", 14.32f, 27.0f, 12.0f);
+        p.add(Widget::Kind::Knob, "FBK", "feedback", 34.64f, 27.0f, 12.0f);
+        p.add(Widget::Kind::Knob, "AGE", "age", 12.48f, 46.0f);
+        p.add(Widget::Kind::Knob, "HEADS", "heads", 26.48f, 46.0f);
+        p.add(Widget::Kind::Knob, "MIX", "mix", 40.48f, 46.0f);
+        p.add(Widget::Kind::Toggle, "HOLD", "hold", 14.48f, 64.0f);
+        p.add(Widget::Kind::Toggle, "REV", "reverse", 35.48f, 64.0f);
+        p.add(Widget::Kind::Jack, "IN", "in:in", 9.48f, 92.0f);
+        p.add(Widget::Kind::Jack, "TIME", "in:time", 23.48f, 92.0f);
+        p.add(Widget::Kind::Jack, "FRZ", "in:freeze", 37.48f, 92.0f);
+        p.add(Widget::Kind::Jack, "REV", "in:rev", 51.48f, 92.0f);
+        p.add(Widget::Kind::Jack, "OUT", "out:out", 23.48f, 110.0f);
+        p.add(Widget::Kind::Jack, "WET", "out:wet", 37.48f, 110.0f);
         return p;
     }
 

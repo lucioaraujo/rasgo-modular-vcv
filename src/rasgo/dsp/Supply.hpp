@@ -48,21 +48,24 @@ public:
 
     Panel panel() const override {
         Panel p;
+        // Personalização (autor, 28/11/2026: "avance nos 16 módulos que ainda
+        // faltam personalizar"; jacks embaixo): a fonte:
+        // ENERG e TEMPO em par de 12 mm; a queda e a deriva embaixo.
         p.hp = 8;
         p.add(Widget::Kind::Label, "SUPPLY", "", 2.5f, 2.0f);
-        p.add(Widget::Kind::Display, "supply", "", 2.5f, 6.0f, 35.6f);
-        p.add(Widget::Kind::Knob, "ENERG", "energy", 6.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "QUEDA", "sag", 24.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "TEMPO", "time", 6.0f, 52.0f);
-        p.add(Widget::Kind::Knob, "DERIVA", "wander", 24.0f, 52.0f);
-        p.add(Widget::Kind::Jack, "CARGA", "in:load", 7.0f, 82.0f);
-        p.add(Widget::Kind::Jack, "ENERG", "in:energy_cv", 21.0f, 82.0f);
-        p.add(Widget::Kind::Jack, "TRILHO", "out:rail", 7.0f, 98.0f);
-        p.add(Widget::Kind::Jack, "FALHA", "out:fail", 21.0f, 98.0f);
-        p.add(Widget::Kind::Jack, "D1", "out:d1", 5.0f, 116.0f);
-        p.add(Widget::Kind::Jack, "D2", "out:d2", 14.0f, 116.0f);
-        p.add(Widget::Kind::Jack, "D3", "out:d3", 23.0f, 116.0f);
-        p.add(Widget::Kind::Jack, "D4", "out:d4", 32.0f, 116.0f);
+        p.add(Widget::Kind::Display, "supply", "", 2.5f, 6.0f, 35.64f);
+        p.add(Widget::Kind::Knob, "ENERG", "energy", 6.70f, 27.0f, 12.0f);
+        p.add(Widget::Kind::Knob, "TEMPO", "time", 21.94f, 27.0f, 12.0f);
+        p.add(Widget::Kind::Knob, "QUEDA", "sag", 9.32f, 46.0f);
+        p.add(Widget::Kind::Knob, "DERIV", "wander", 23.32f, 46.0f);
+        p.add(Widget::Kind::Jack, "CARGA", "in:load", 12.32f, 70.0f);
+        p.add(Widget::Kind::Jack, "ENERG", "in:energy_cv", 28.32f, 70.0f);
+        p.add(Widget::Kind::Jack, "TRILHO", "out:rail", 11.82f, 88.0f);
+        p.add(Widget::Kind::Jack, "FALHA", "out:fail", 28.82f, 88.0f);
+        p.add(Widget::Kind::Jack, "D1", "out:d1", 8.32f, 110.0f);
+        p.add(Widget::Kind::Jack, "D2", "out:d2", 16.32f, 110.0f);
+        p.add(Widget::Kind::Jack, "D3", "out:d3", 24.32f, 110.0f);
+        p.add(Widget::Kind::Jack, "D4", "out:d4", 32.32f, 110.0f);
         return p;
     }
 

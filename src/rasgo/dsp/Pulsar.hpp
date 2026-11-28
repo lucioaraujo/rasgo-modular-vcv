@@ -55,21 +55,23 @@ public:
 
     Panel panel() const override {
         Panel p;
+        // Arquétipo das FONTES (autor, 26/11/2026): o knob herói no centro;
+        // formante e forma do pulso nos lados.
         p.hp = 12;
         p.add(Widget::Kind::Label, "PULSAR", "", 2.5f, 2.0f);
-        p.add(Widget::Kind::Display, "pulsar", "", 2.5f, 6.0f, 56.0f);
-        p.add(Widget::Kind::Knob, "FREQ", "freq", 8.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "FRMT", "formant", 24.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "SHAPE", "shape", 40.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "WIND", "window", 8.0f, 54.0f);
-        p.add(Widget::Kind::Knob, "JITR", "jitter", 24.0f, 54.0f);
-        p.add(Widget::Kind::Knob, "MASK", "mask", 40.0f, 54.0f);
-        p.add(Widget::Kind::Knob, "SPRD", "spread", 8.0f, 78.0f);
-        p.add(Widget::Kind::Knob, "LEVEL", "level", 24.0f, 78.0f);
-        p.add(Widget::Kind::Jack, "PIT", "in:pitch", 8.0f, 100.0f);
-        p.add(Widget::Kind::Jack, "FQM", "in:formant_mod", 22.0f, 100.0f);
-        p.add(Widget::Kind::Jack, "L", "out:out", 8.0f, 120.0f);
-        p.add(Widget::Kind::Jack, "R", "out:r", 22.0f, 120.0f);
+        p.add(Widget::Kind::Display, "pulsar", "", 2.5f, 6.0f, 55.96f);
+        p.add(Widget::Kind::Knob, "FRMT", "formant", 8.48f, 31.0f);
+        p.add(Widget::Kind::Knob, "FREQ", "freq", 23.48f, 27.0f, 14.0f);   // herói
+        p.add(Widget::Kind::Knob, "SHAPE", "shape", 44.48f, 31.0f);
+        p.add(Widget::Kind::Knob, "WIND", "window", 12.48f, 50.0f);
+        p.add(Widget::Kind::Knob, "JITR", "jitter", 26.48f, 50.0f);
+        p.add(Widget::Kind::Knob, "MASK", "mask", 40.48f, 50.0f);
+        p.add(Widget::Kind::Knob, "SPRD", "spread", 19.48f, 66.0f);
+        p.add(Widget::Kind::Knob, "LEVEL", "level", 33.48f, 66.0f);
+        p.add(Widget::Kind::Jack, "PIT", "in:pitch", 23.48f, 92.0f);
+        p.add(Widget::Kind::Jack, "FQM", "in:formant_mod", 37.48f, 92.0f);
+        p.add(Widget::Kind::Jack, "L", "out:out", 23.48f, 110.0f);
+        p.add(Widget::Kind::Jack, "R", "out:r", 37.48f, 110.0f);
         return p;
     }
 

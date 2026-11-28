@@ -51,20 +51,25 @@ public:
 
     Panel panel() const override {
         Panel p;
+        // Revisão de painel (autor, 26/11/2026): colunas pelo centro, knobs e
+        // jacks nas mesmas colunas, saídas embaixo no centro (G1–G4).
+        // Personalização (autor, 28/11/2026: "avance nos 16 módulos que ainda
+        // faltam personalizar"; jacks embaixo): a citação:
+        // IDADE (o quão antigo é o trecho) e PROB (a chance), em par de 12 mm.
         p.hp = 10;
         p.add(Widget::Kind::Label, "APOCRIFO", "", 2.5f, 2.0f);
-        p.add(Widget::Kind::Display, "apocrifo", "", 2.5f, 6.0f, 45.8f);
-        p.add(Widget::Kind::Knob, "MODO", "mode", 8.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "IDADE", "min_age", 23.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "DUR", "length", 38.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "CHANCE", "chance", 8.0f, 54.0f);
-        p.add(Widget::Kind::Knob, "PROF", "depth", 23.0f, 54.0f);
-        p.add(Widget::Kind::Knob, "SEED", "seed", 38.0f, 54.0f);
-        p.add(Widget::Kind::Jack, "IN", "in:in", 7.0f, 96.0f);
-        p.add(Widget::Kind::Jack, "CIT", "in:trigger", 19.0f, 96.0f);
-        p.add(Widget::Kind::Jack, "OUT", "out:out", 7.0f, 116.0f);
-        p.add(Widget::Kind::Jack, "ATIVO", "out:active", 19.0f, 116.0f);
-        p.add(Widget::Kind::Jack, "IDADE", "out:age", 31.0f, 116.0f);
+        p.add(Widget::Kind::Display, "apocrifo", "", 2.5f, 6.0f, 45.80f);
+        p.add(Widget::Kind::Knob, "IDADE", "min_age", 9.24f, 27.0f, 12.0f);
+        p.add(Widget::Kind::Knob, "PROB", "chance", 29.56f, 27.0f, 12.0f);
+        p.add(Widget::Kind::Knob, "MODO", "mode", 7.40f, 46.0f);
+        p.add(Widget::Kind::Knob, "DUR", "length", 21.40f, 46.0f);
+        p.add(Widget::Kind::Knob, "PROF", "depth", 35.40f, 46.0f);
+        p.add(Widget::Kind::Knob, "SEED", "seed", 21.40f, 62.0f);
+        p.add(Widget::Kind::Jack, "IN", "in:in", 19.05f, 92.0f);
+        p.add(Widget::Kind::Jack, "CIT", "in:trigger", 31.75f, 92.0f);
+        p.add(Widget::Kind::Jack, "OUT", "out:out", 11.40f, 110.0f);
+        p.add(Widget::Kind::Jack, "ATIVO", "out:active", 25.40f, 110.0f);
+        p.add(Widget::Kind::Jack, "IDADE", "out:age", 39.40f, 110.0f);
         return p;
     }
 

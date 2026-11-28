@@ -1,4 +1,4 @@
-// GERADO por tools/gerar_plugin.py: o LEARN em inglês do Rasgo Modular 66421f6
+// GERADO por tools/gerar_plugin.py: o LEARN em inglês do Rasgo Modular ed68437
 // (textos do autor, oferecidos também sob GPL-3.0-or-later em 23/11/2026).
 {"ABACUS", "count_step", R"RASGO(How much the counter adds (or subtracts, if negative) at each CLOCK.)RASGO"},
 {"ABACUS", "in:a", R"RASGO(Input A — with no cable, the source is the counter's own ramp (the ABACUS plays melody and rhythm on its own).)RASGO"},
@@ -69,7 +69,7 @@
 {"APOCRIFO", "out:active", R"RASGO(High while a quotation plays.)RASGO"},
 {"APOCRIFO", "out:age", R"RASGO(How far back the last quotation came from (age/60 s).)RASGO"},
 {"APOCRIFO", "out:out", R"RASGO(The audio, with the quotations.)RASGO"},
-{"APOCRIFO", "seed", R"RASGO(Seed: where the quotations come from and when they land (with CHANCE).)RASGO"},
+{"APOCRIFO", "seed", R"RASGO(Seed: where the quotations come from and when they land (with PROB).)RASGO"},
 {"ARP", "chord", R"RASGO(The chord to arpeggiate — CHORD's 10 shapes: unison, octaves, fifth, major, minor, sus4, maj7, min7, dim, add9. The CHD CV adds.)RASGO"},
 {"ARP", "gate_len", R"RASGO(Length of each note, as a fraction of the step (5–95 %).)RASGO"},
 {"ARP", "in:chord_cv", R"RASGO(CV added to CHORD: every 1/9 changes shape.)RASGO"},
@@ -1301,6 +1301,7 @@
 {"VCA4", "cv3_amt", R"RASGO(Attenuverter of CV3.)RASGO"},
 {"VCA4", "cv4_amt", R"RASGO(Attenuverter of CV4.)RASGO"},
 {"VCA4", "drift", R"RASGO(Slow, SEEDED oscillation in the 4 gains (±~3 %) — the bank breathes. Deterministic. 0 = static.)RASGO"},
+{"VCA4", "in:chain", R"RASGO(CHAIN: audio added to the mix before MIXG.)RASGO"},
 {"VCA4", "in:cv1", R"RASGO(CV of the gain of channel 1.)RASGO"},
 {"VCA4", "in:cv2", R"RASGO(CV of the gain of channel 2.)RASGO"},
 {"VCA4", "in:cv3", R"RASGO(CV of the gain of channel 3.)RASGO"},
@@ -1309,6 +1310,7 @@
 {"VCA4", "in:in2", R"RASGO(Audio of channel 2.)RASGO"},
 {"VCA4", "in:in3", R"RASGO(Audio of channel 3.)RASGO"},
 {"VCA4", "in:in4", R"RASGO(Audio of channel 4.)RASGO"},
+{"VCA4", "in:mixcv", R"RASGO(MXCV: CV of the mix gain — when patched, MIXG is multiplied by the CV (0..1).)RASGO"},
 {"VCA4", "level1", R"RASGO(Manual gain of channel 1 (the knob that CV1 adds to — modulation by PORT, the knob stays alive).)RASGO"},
 {"VCA4", "level2", R"RASGO(Manual gain of channel 2.)RASGO"},
 {"VCA4", "level3", R"RASGO(Manual gain of channel 3.)RASGO"},

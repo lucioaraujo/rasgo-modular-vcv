@@ -61,29 +61,32 @@ public:
 
     Panel panel() const override {
         Panel p;
+        // Personalização (autor, 28/11/2026: "avance nesses 10 que sugeriu e
+        // no shifter também"; jacks embaixo): os dois gestos
+        // opostos, ACCEL (acelerar) e RIT (frear), em par de 12 mm.
         p.hp = 16;
         p.add(Widget::Kind::Label, "TEMPO", "", 2.5f, 2.0f);
-        p.add(Widget::Kind::Display, "tempo", "", 2.5f, 6.0f, 76.0f);
-        p.add(Widget::Kind::Knob, "ACCEL", "accel", 7.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "FINAL", "final", 21.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "SHAPE", "shape", 35.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "RIT", "ritard", 49.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "MODE", "mode", 63.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "PHR", "phrase", 7.0f, 52.0f);
-        p.add(Widget::Kind::Knob, "ARCH", "arch_depth", 21.0f, 52.0f);
-        p.add(Widget::Kind::Knob, "RUBATO", "rubato", 35.0f, 52.0f);
-        p.add(Widget::Kind::Knob, "MOLA", "spring", 49.0f, 52.0f);
-        p.add(Widget::Kind::Knob, "FERMT", "fermata_len", 63.0f, 52.0f);
-        p.add(Widget::Kind::Knob, "SEED", "seed", 7.0f, 74.0f);
-        p.add(Widget::Kind::Jack, "TENS", "in:tension", 5.0f, 96.0f);
-        p.add(Widget::Kind::Jack, "SECT", "in:section", 17.0f, 96.0f);
-        p.add(Widget::Kind::Jack, "CODA", "in:coda", 29.0f, 96.0f);
-        p.add(Widget::Kind::Jack, "FERM", "in:fermata", 41.0f, 96.0f);
-        p.add(Widget::Kind::Jack, "CLK", "in:clock", 53.0f, 96.0f);
-        p.add(Widget::Kind::Jack, "RATE", "out:rate", 5.0f, 116.0f);
-        p.add(Widget::Kind::Jack, "ARCH", "out:arch", 17.0f, 116.0f);
-        p.add(Widget::Kind::Jack, "BEAT", "out:beat", 29.0f, 116.0f);
-        p.add(Widget::Kind::Jack, "END", "out:end", 41.0f, 116.0f);
+        p.add(Widget::Kind::Display, "tempo", "", 2.5f, 6.0f, 76.28f);
+        p.add(Widget::Kind::Knob, "ACCEL", "accel", 24.48f, 27.0f, 12.0f);
+        p.add(Widget::Kind::Knob, "RIT", "ritard", 44.80f, 27.0f, 12.0f);
+        p.add(Widget::Kind::Knob, "FINAL", "final", 8.64f, 46.0f);
+        p.add(Widget::Kind::Knob, "SHAPE", "shape", 22.64f, 46.0f);
+        p.add(Widget::Kind::Knob, "MODE", "mode", 36.64f, 46.0f);
+        p.add(Widget::Kind::Knob, "PHR", "phrase", 50.64f, 46.0f);
+        p.add(Widget::Kind::Knob, "ARCH", "arch_depth", 64.64f, 46.0f);
+        p.add(Widget::Kind::Knob, "RUBAT", "rubato", 15.64f, 62.0f);
+        p.add(Widget::Kind::Knob, "MOLA", "spring", 29.64f, 62.0f);
+        p.add(Widget::Kind::Knob, "FERMT", "fermata_len", 43.64f, 62.0f);
+        p.add(Widget::Kind::Knob, "SEED", "seed", 57.64f, 62.0f);
+        p.add(Widget::Kind::Jack, "TENS", "in:tension", 15.24f, 92.0f);
+        p.add(Widget::Kind::Jack, "SECT", "in:section", 27.94f, 92.0f);
+        p.add(Widget::Kind::Jack, "CODA", "in:coda", 40.64f, 92.0f);
+        p.add(Widget::Kind::Jack, "FERM", "in:fermata", 53.34f, 92.0f);
+        p.add(Widget::Kind::Jack, "CLK", "in:clock", 66.04f, 92.0f);
+        p.add(Widget::Kind::Jack, "RATE", "out:rate", 21.59f, 110.0f);
+        p.add(Widget::Kind::Jack, "ARCH", "out:arch", 34.29f, 110.0f);
+        p.add(Widget::Kind::Jack, "BEAT", "out:beat", 46.99f, 110.0f);
+        p.add(Widget::Kind::Jack, "END", "out:end", 59.69f, 110.0f);
         return p;
     }
 

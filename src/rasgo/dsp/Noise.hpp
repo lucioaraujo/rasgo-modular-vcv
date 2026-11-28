@@ -70,24 +70,36 @@ public:
     Panel panel() const override {
         // coordenadas em mm; painel 3U (128,5 mm) x hp*5,08 mm
         Panel p;
-        p.hp = 14;   // 8 saídas em 2 fileiras de 4; +POIS 2026-09-06 (era 12)
+        // 10 HP, desenho próprio (autor, 25/11/2026: "o noise tá bem mal
+        // diagramado"): quatro colunas a cada 12,7 mm, simétricas, e as
+        // fileiras a cada 24 mm (knobs, entradas no meio, as 8 saídas em
+        // 2 fileiras de 4), todas nas mesmas colunas. Era 14 HP, com as
+        // fileiras desalinhadas e a direita do painel vazia.
+        p.hp = 10;
+        constexpr float c1 = 6.35f, c2 = 19.05f, c3 = 31.75f, c4 = 44.45f;
         p.add(Widget::Kind::Label, "NOISE", "", 2.5f, 2.0f);
-        p.add(Widget::Kind::Display, "noise", "", 2.5f, 6.0f, 56.0f);
-        p.add(Widget::Kind::Knob, "RATE", "rate", 9.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "SLEW", "slew", 25.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "SPRD", "spread", 41.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "POIS", "poisson", 55.0f, 30.0f);
-        p.add(Widget::Kind::Jack, "TRIG", "in:trigger", 9.0f, 60.0f);
-        p.add(Widget::Kind::Jack, "IN", "in:in", 23.0f, 60.0f);
+        p.add(Widget::Kind::Display, "noise", "", 2.5f, 6.0f, 45.8f);
+        // O par do sorteio em 12 mm (autor, 27/11/2026: "o noise pode ter um
+        // ou dois knobs maiores"): RATE (quando sorteia) e SLEW (como
+        // desliza) maiores, SPRD e POIS (os ajustes do ritmo) embaixo deles,
+        // nas mesmas colunas. Knobs escuros: o RATE não é o centro do
+        // módulo, as cores de ruído não dependem dele.
+        constexpr float e = 15.24f, d = 35.56f;   // as duas colunas do par
+        p.add(Widget::Kind::Knob, "RATE", "rate", e - 6.0f, 27.0f, 12.0f);
+        p.add(Widget::Kind::Knob, "SLEW", "slew", d - 6.0f, 27.0f, 12.0f);
+        p.add(Widget::Kind::Knob, "SPRD", "spread", e - 4.0f, 45.0f);
+        p.add(Widget::Kind::Knob, "POIS", "poisson", d - 4.0f, 45.0f);
+        p.add(Widget::Kind::Jack, "TRIG", "in:trigger", c2, 62.0f);
+        p.add(Widget::Kind::Jack, "IN", "in:in", c3, 62.0f);
         // 8 saídas simultâneas, 2 fileiras de 4
-        p.add(Widget::Kind::Jack, "WHT", "out:white", 8.0f, 88.0f);
-        p.add(Widget::Kind::Jack, "PNK", "out:pink", 21.0f, 88.0f);
-        p.add(Widget::Kind::Jack, "BRN", "out:brown", 34.0f, 88.0f);
-        p.add(Widget::Kind::Jack, "S&H", "out:sh", 47.0f, 88.0f);
-        p.add(Widget::Kind::Jack, "SMTH", "out:smooth", 8.0f, 110.0f);
-        p.add(Widget::Kind::Jack, "BLU", "out:blue", 21.0f, 110.0f);
-        p.add(Widget::Kind::Jack, "VLT", "out:violet", 34.0f, 110.0f);
-        p.add(Widget::Kind::Jack, "BIT", "out:bit", 47.0f, 110.0f);
+        p.add(Widget::Kind::Jack, "WHT", "out:white", c1, 80.0f);
+        p.add(Widget::Kind::Jack, "PNK", "out:pink", c2, 80.0f);
+        p.add(Widget::Kind::Jack, "BRN", "out:brown", c3, 80.0f);
+        p.add(Widget::Kind::Jack, "S&H", "out:sh", c4, 80.0f);
+        p.add(Widget::Kind::Jack, "SMTH", "out:smooth", c1, 104.0f);
+        p.add(Widget::Kind::Jack, "BLU", "out:blue", c2, 104.0f);
+        p.add(Widget::Kind::Jack, "VLT", "out:violet", c3, 104.0f);
+        p.add(Widget::Kind::Jack, "BIT", "out:bit", c4, 104.0f);
         return p;
     }
 

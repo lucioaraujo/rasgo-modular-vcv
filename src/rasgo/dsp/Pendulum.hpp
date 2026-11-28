@@ -55,27 +55,27 @@ public:
 
     Panel panel() const override {
         Panel p;
+        // Personalização (autor, 28/11/2026: "avance nos 16 módulos que ainda
+        // faltam personalizar"; jacks embaixo): os dois braços
+        // do pêndulo duplo: SPEED e ENRGY em par de 12 mm, logo abaixo do visor.
         p.hp = 12;
         p.add(Widget::Kind::Label, "PENDULUM", "", 2.5f, 2.0f);
-        // visor mais alto (pedido do autor, 10/11/2026: "para que a
-        // animação fique menos encolhida") — 30 mm em vez de 16; os knobs
-        // descem para o espaço que estava livre acima dos jacks
-        p.add(Widget::Kind::Display, "pendulum", "", 2.5f, 6.0f, 56.0f);
+        p.add(Widget::Kind::Display, "pendulum", "", 2.5f, 6.0f, 55.96f);
         p.tall(30.0f);
-        p.add(Widget::Kind::Knob, "ENRGY", "energy", 7.0f, 46.0f);
-        p.add(Widget::Kind::Knob, "RATIO", "ratio", 25.0f, 46.0f);
-        p.add(Widget::Kind::Knob, "MASS", "mass", 43.0f, 46.0f);
-        p.add(Widget::Kind::Knob, "SPEED", "speed", 7.0f, 68.0f);
-        p.add(Widget::Kind::Knob, "DAMP", "damp", 25.0f, 68.0f);
-        p.add(Widget::Kind::Toggle, "AUTO", "auto", 45.3f, 72.0f);
-        p.add(Widget::Kind::Jack, "KICK", "in:kick", 7.0f, 96.0f);
-        p.add(Widget::Kind::Jack, "SPD", "in:speed_cv", 19.0f, 96.0f);
-        p.add(Widget::Kind::Jack, "CROSS", "out:cross", 35.0f, 96.0f);
-        p.add(Widget::Kind::Jack, "FLIP", "out:flip", 51.0f, 96.0f);
-        p.add(Widget::Kind::Jack, "X1", "out:x1", 7.0f, 116.0f);
-        p.add(Widget::Kind::Jack, "Y1", "out:y1", 19.0f, 116.0f);
-        p.add(Widget::Kind::Jack, "X2", "out:x2", 31.0f, 116.0f);
-        p.add(Widget::Kind::Jack, "Y2", "out:y2", 43.0f, 116.0f);
+        p.add(Widget::Kind::Knob, "SPEED", "speed", 14.32f, 41.0f, 12.0f);
+        p.add(Widget::Kind::Knob, "ENRGY", "energy", 34.64f, 41.0f, 12.0f);
+        p.add(Widget::Kind::Knob, "RATIO", "ratio", 12.48f, 60.0f);
+        p.add(Widget::Kind::Knob, "MASS", "mass", 26.48f, 60.0f);
+        p.add(Widget::Kind::Knob, "DAMP", "damp", 40.48f, 60.0f);
+        p.add(Widget::Kind::Toggle, "AUTO", "auto", 28.48f, 74.0f);
+        p.add(Widget::Kind::Jack, "KICK", "in:kick", 9.98f, 92.0f);
+        p.add(Widget::Kind::Jack, "SPD", "in:speed_cv", 23.48f, 92.0f);
+        p.add(Widget::Kind::Jack, "CROSS", "out:cross", 36.98f, 92.0f);
+        p.add(Widget::Kind::Jack, "FLIP", "out:flip", 50.48f, 92.0f);
+        p.add(Widget::Kind::Jack, "X1", "out:x1", 11.43f, 110.0f);
+        p.add(Widget::Kind::Jack, "Y1", "out:y1", 24.13f, 110.0f);
+        p.add(Widget::Kind::Jack, "X2", "out:x2", 36.83f, 110.0f);
+        p.add(Widget::Kind::Jack, "Y2", "out:y2", 49.53f, 110.0f);
         return p;
     }
 

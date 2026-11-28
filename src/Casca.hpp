@@ -16,6 +16,9 @@
 #include "plugin.hpp"
 
 #include "core/SignalGraph.hpp"
+#include "ui/OutputLights.hpp"
+#include "ui/PanelGeometry.hpp"
+#include "ui/PrimaryControl.hpp"
 
 #include <cmath>
 #include <memory>
@@ -109,6 +112,7 @@ struct Casca : rack::engine::Module {
 
     // uma luz por slider (a luz laranja do slider na variante B)
     std::vector<int> luzParam;
+    std::vector<float> luzSaida;   // o pico com sinal mostrado por saída (cai devagar)
 
     D& voz(int v) { return v == 0 ? dsp : *extras[static_cast<std::size_t>(v - 1)]; }
 
@@ -118,8 +122,12 @@ struct Casca : rack::engine::Module {
             if (w.kind == WK::Slider)
                 for (std::size_t i = 0; i < ps.size(); ++i)
                     if (ps[i].descriptor.id == w.bind) luzParam.push_back(static_cast<int>(i));
+        // + duas luzes por saída (verde: positivo, vermelho: negativo), as do app
+        // (`ui/OutputLights.hpp`, 26/11/2026), depois das luzes dos sliders
         config(static_cast<int>(ps.size()), static_cast<int>(dsp.inputCount()),
-               static_cast<int>(dsp.outputCount()), static_cast<int>(luzParam.size()));
+               static_cast<int>(dsp.outputCount()),
+               static_cast<int>(luzParam.size() + 2 * dsp.outputCount()));
+        luzSaida.assign(dsp.outputCount(), 0.0f);
         for (std::size_t i = 0; i < ps.size(); ++i) {
             const auto& pd = ps[i].descriptor;
             const bool lg = dsp.type() == "ENVELOPE" && pd.minimum > 0.0f
@@ -222,6 +230,14 @@ struct Casca : rack::engine::Module {
         for (std::size_t k = 0; k < luzParam.size(); ++k)
             if (auto* q = paramQuantities[static_cast<std::size_t>(luzParam[k])])
                 lights[k].setBrightness(0.25f + 0.75f * q->getScaledValue());
+        // as luzes das saídas: o pico com sinal do bloco que acabou de sair
+        for (std::size_t o = 0; o < luzSaida.size() && o < buf[0].pronto.size(); ++o) {
+            luzSaida[o] = rasgo::ui::lightFollow(luzSaida[o], rasgo::ui::blockSignedPeak(buf[0].pronto[o], 0.0f));
+            const float b = rasgo::ui::lightBrightness(luzSaida[o]);
+            const std::size_t l = luzParam.size() + 2 * o;
+            lights[l].setBrightness(luzSaida[o] > 0.0f ? b : 0.0f);
+            lights[l + 1].setBrightness(luzSaida[o] < 0.0f ? b : 0.0f);
+        }
         for (int v = 0; v < nVozes; ++v) {
             D& d = voz(v);
             for (std::size_t p = 0; p < ids.size(); ++p)
@@ -259,7 +275,7 @@ inline NVGcolor recesso() { return nvgRGB(0x0e, 0x10, 0x15); }
 inline NVGcolor linha() { return nvgRGB(0x48, 0x50, 0x60); }
 inline NVGcolor textoPrim() { return nvgRGB(0xf0, 0xf3, 0xf8); }
 inline NVGcolor textoSec() { return nvgRGB(0xbe, 0xc8, 0xd8); }
-inline NVGcolor acento() { return nvgRGB(0xff, 0x9d, 0x4c); }
+inline NVGcolor acento() { return nvgRGB(0xd8, 0xdd, 0xe6); }   // prata: o laranja saiu (autor, 27/11/2026)
 // a cor da família (a mesma do app: tons apagados, `familyColour`)
 inline NVGcolor familia(const std::string& f) {
     float h = -1.0f;
@@ -302,6 +318,14 @@ struct PainelRasgo : rack::widget::Widget {
         nvgFillColor(vg, cor::familia(familia));
 #endif
         nvgFill(vg);
+        // a área das saídas: uma placa mais clara (`ui::outputPlates`, 26/11/2026)
+        for (const auto& r : rasgo::ui::outputPlates(painel)) {
+            const unsigned c = rasgo::ui::kOutputPlate;
+            nvgBeginPath(vg);
+            nvgRoundedRect(vg, rack::mm2px(r.x), rack::mm2px(r.y), rack::mm2px(r.w), rack::mm2px(r.h),
+                           rack::mm2px(rasgo::ui::kOutputPlateRadius));
+            nvgFillColor(vg, nvgRGB((c >> 16) & 255, (c >> 8) & 255, c & 255)); nvgFill(vg);
+        }
         nvgBeginPath(vg); nvgMoveTo(vg, 3, H - 4.0f); nvgLineTo(vg, W - 3, H - 4.0f);
         nvgStrokeColor(vg, cor::linha()); nvgStroke(vg);
         // o wordmark RASGO na base (o SVG da família, `res/rasgo_wordmark.svg`)
@@ -493,6 +517,10 @@ struct KnobReflexo : K {
 using KnobVcvReflexo = KnobReflexo<rack::componentlibrary::RoundSmallBlackKnob>;
 using KnobVcvMedio = KnobReflexo<rack::componentlibrary::RoundBlackKnob>;
 using KnobVcvGrande = KnobReflexo<rack::componentlibrary::RoundLargeBlackKnob>;
+// o controle principal (`ui::isPrimaryControl`, 26/11/2026): corpo claro e
+// ponteiro escuro, como no app — o Davies branco da própria biblioteca
+using KnobPrincipal = rack::componentlibrary::Davies1900hWhiteKnob;
+using KnobPrincipalGrande = rack::componentlibrary::Davies1900hLargeWhiteKnob;
 
 // O tamanho de cada knob (23/11/2026, autor: "adaptar tamanhos diferentes de
 // knobs… ver se há espaço"): o knob que o app já declara maior (CUT do
@@ -624,7 +652,52 @@ struct VisorRasgo : rack::widget::Widget {
             // cabo) até a altura toda, como se houvesse sinal (autor, 24/11)
             const float pico = std::max(std::fabs(lo), std::fabs(hi));
             const bool temSinal = m->visorLento ? (hi - lo) > 0.002f : pico > 0.002f;
-            if (temSinal && hi > lo + 1e-6f) {
+            const std::string tipoV = m->dsp.type();
+            const bool polar = m->visorLento && (tipoV == "POLYGON" || tipoV == "ORBIT"
+                                                 || tipoV == "EPICYCLE" || tipoV == "SEASON");
+            if (polar) {
+                // o ciclo como círculo (o visor do app desde 27/11/2026): o tempo dá
+                // a volta, o valor é o raio, o ponto marca o agora
+                const float cx = w * 0.5f, cy = h * 0.5f, R = std::min(w, h) * 0.5f - 2.0f;
+                nvgStrokeColor(vg, nvgRGBA(0xbe, 0xc8, 0xd8, 0x26)); nvgStrokeWidth(vg, 1.0f);
+                for (const float f : {0.35f, 0.6f, 0.85f}) { nvgBeginPath(vg); nvgCircle(vg, cx, cy, R * f); nvgStroke(vg); }
+                if (temSinal && hi > lo + 1e-6f) {
+                    const auto raio = [&](int i) { return R * (0.6f + 0.38f * ((v[i] - lo) / (hi - lo) * 2.0f - 1.0f)); };
+                    nvgBeginPath(vg);
+                    for (int i = 0; i <= N; ++i) {
+                        const float a = 6.2831853f * static_cast<float>(i) / N - 1.5707963f, r = raio(i % N);
+                        if (i == 0) nvgMoveTo(vg, cx + std::cos(a) * r, cy + std::sin(a) * r);
+                        else nvgLineTo(vg, cx + std::cos(a) * r, cy + std::sin(a) * r);
+                    }
+                    nvgStrokeColor(vg, traco); nvgStrokeWidth(vg, 1.2f); nvgStroke(vg);
+                    nvgBeginPath(vg); nvgCircle(vg, cx, cy - raio(N - 1), 2.0f);
+                    nvgFillColor(vg, cor::textoPrim()); nvgFill(vg);
+                }
+            } else if (tipoV == "SCOPE") {
+                // osciloscópio de fósforo (o visor do app desde 27/11/2026): grade,
+                // traço verde com brilho, o trecho mais antigo apagando
+                nvgStrokeColor(vg, nvgRGBA(0x78, 0xff, 0xaa, 0x14)); nvgStrokeWidth(vg, 1.0f);
+                nvgBeginPath(vg);
+                for (int k = 1; k < 8; ++k) { nvgMoveTo(vg, w * k / 8.0f, 0); nvgLineTo(vg, w * k / 8.0f, h); }
+                for (int k = 1; k < 4; ++k) { nvgMoveTo(vg, 0, h * k / 4.0f); nvgLineTo(vg, w, h * k / 4.0f); }
+                nvgStroke(vg);
+                if (temSinal) {
+                    const float pk = std::max(std::fabs(lo), std::fabs(hi));
+                    constexpr int seg = 4;
+                    for (int sgm = 0; sgm < seg; ++sgm) {
+                        nvgBeginPath(vg);
+                        const int i0 = sgm * n / seg, i1 = std::min(n - 1, (sgm + 1) * n / seg);
+                        for (int i = i0; i <= i1; ++i) {
+                            const float x = 2.0f + (w - 4.0f) * static_cast<float>(i) / static_cast<float>(n - 1);
+                            const float y = h * 0.5f - v[ini + i] / pk * (h * 0.5f - 3.0f);
+                            if (i == i0) nvgMoveTo(vg, x, y); else nvgLineTo(vg, x, y);
+                        }
+                        const float al = 0.25f + 0.75f * static_cast<float>(sgm + 1) / seg;
+                        nvgStrokeColor(vg, nvgRGBAf(0.47f, 1.0f, 0.67f, 0.22f * al)); nvgStrokeWidth(vg, 3.2f); nvgStroke(vg);
+                        nvgStrokeColor(vg, nvgRGBAf(0.59f, 1.0f, 0.75f, al)); nvgStrokeWidth(vg, 1.3f); nvgStroke(vg);
+                    }
+                }
+            } else if (temSinal && hi > lo + 1e-6f) {
                 nvgBeginPath(vg);
                 for (int i = 0; i < n; ++i) {
                     const float x = 2.0f + (w - 4.0f) * static_cast<float>(i) / static_cast<float>(n - 1);
@@ -999,7 +1072,12 @@ struct CascaWidget : rack::app::ModuleWidget {
                 const int i = portIndex(w.bind.substr(saida ? 4 : 3), saida);
                 if (i < 0) continue;
                 const auto c = rack::mm2px(rack::math::Vec(w.x, w.y));
-                if (saida) addOutput(rack::createOutputCentered<PecaJack>(c, m, i));
+                if (saida) {
+                    addOutput(rack::createOutputCentered<PecaJack>(c, m, i));
+                    if (m) addChild(rack::createLightCentered<rack::componentlibrary::SmallLight<rack::componentlibrary::GreenRedLight>>(
+                        rack::mm2px(rack::math::Vec(w.x + rasgo::ui::kLightDX, w.y + rasgo::ui::kLightDY)),
+                        m, static_cast<int>(m->luzParam.size()) + 2 * i));
+                }
                 else addInput(rack::createInputCentered<PecaJack>(c, m, i));
                 continue;
             }
@@ -1011,7 +1089,10 @@ struct CascaWidget : rack::app::ModuleWidget {
                 rack::app::ParamWidget* pw = nullptr;
 #if RASGO_ESTILO == 3
                 const int tk = tam[static_cast<std::size_t>(&w - p.widgets.data())];
-                if (tk == 2) pw = rack::createParamCentered<KnobVcvGrande>(c, m, i);
+                if (rasgo::ui::isPrimaryControl(tipo, w.bind))
+                    pw = tk == 2 ? static_cast<rack::app::ParamWidget*>(rack::createParamCentered<KnobPrincipalGrande>(c, m, i))
+                                 : rack::createParamCentered<KnobPrincipal>(c, m, i);
+                else if (tk == 2) pw = rack::createParamCentered<KnobVcvGrande>(c, m, i);
                 else if (tk == 1) pw = rack::createParamCentered<KnobVcvMedio>(c, m, i);
                 else pw = rack::createParamCentered<PecaKnob>(c, m, i);
 #else

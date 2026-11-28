@@ -75,31 +75,34 @@ public:
 
     Panel panel() const override {
         Panel p;
+        // Personalização (autor, 28/11/2026: "avance nesses 10 que sugeriu e
+        // no shifter também"; jacks embaixo): o acento:
+        // METR (o metro) e PROF (a profundidade), em par de 12 mm.
         p.hp = 14;
         p.add(Widget::Kind::Label, "ACCENT", "", 2.5f, 2.0f);
-        p.add(Widget::Kind::Display, "accent", "", 2.5f, 6.0f, 66.1f);
-        p.add(Widget::Kind::Knob, "METR", "metric", 9.0f, 28.0f);
-        p.add(Widget::Kind::Knob, "SALTO", "leap", 25.0f, 28.0f);
-        p.add(Widget::Kind::Knob, "APICE", "apex", 41.0f, 28.0f);
-        p.add(Widget::Kind::Knob, "EXT", "external", 57.0f, 28.0f);
-        p.add(Widget::Kind::Knob, "AGOG", "agogic", 9.0f, 46.0f);
-        p.add(Widget::Kind::Knob, "SINC", "synco", 25.0f, 46.0f);
-        p.add(Widget::Kind::Knob, "CICLO", "cycle", 41.0f, 46.0f);
-        p.add(Widget::Kind::Knob, "ROT", "rotate", 57.0f, 46.0f);
-        p.add(Widget::Kind::Knob, "HER", "inherit", 9.0f, 64.0f);
-        p.add(Widget::Kind::Knob, "SUPR", "suppress", 25.0f, 64.0f);
-        p.add(Widget::Kind::Knob, "PROF", "depth", 41.0f, 64.0f);
-        p.add(Widget::Kind::Jack, "GATE", "in:gate", 7.0f, 88.0f);
-        p.add(Widget::Kind::Jack, "PTCH", "in:pitch", 19.0f, 88.0f);
-        p.add(Widget::Kind::Jack, "ACC", "in:accent", 31.0f, 88.0f);
-        p.add(Widget::Kind::Jack, "RST", "in:reset", 43.0f, 88.0f);
-        p.add(Widget::Kind::Jack, "ENF", "out:emphasis", 7.0f, 104.0f);
-        p.add(Widget::Kind::Jack, "VCA", "out:vca", 19.0f, 104.0f);
-        p.add(Widget::Kind::Jack, "FC", "out:cutoff", 31.0f, 104.0f);
-        p.add(Widget::Kind::Jack, "DEC", "out:decay", 43.0f, 104.0f);
-        p.add(Widget::Kind::Jack, "SWP", "out:sweep", 7.0f, 118.0f);
-        p.add(Widget::Kind::Jack, "GT", "out:gate", 19.0f, 118.0f);
-        p.add(Widget::Kind::Jack, "NIV", "out:level", 31.0f, 118.0f);
+        p.add(Widget::Kind::Display, "accent", "", 2.5f, 6.0f, 66.12f);
+        p.add(Widget::Kind::Knob, "METR", "metric", 19.40f, 27.0f, 12.0f);
+        p.add(Widget::Kind::Knob, "PROF", "depth", 39.72f, 27.0f, 12.0f);
+        p.add(Widget::Kind::Knob, "SALTO", "leap", 10.56f, 46.0f);
+        p.add(Widget::Kind::Knob, "APICE", "apex", 24.56f, 46.0f);
+        p.add(Widget::Kind::Knob, "EXT", "external", 38.56f, 46.0f);
+        p.add(Widget::Kind::Knob, "AGOG", "agogic", 52.56f, 46.0f);
+        p.add(Widget::Kind::Knob, "SINC", "synco", 3.56f, 62.0f);
+        p.add(Widget::Kind::Knob, "CICLO", "cycle", 17.56f, 62.0f);
+        p.add(Widget::Kind::Knob, "ROT", "rotate", 31.56f, 62.0f);
+        p.add(Widget::Kind::Knob, "HER", "inherit", 45.56f, 62.0f);
+        p.add(Widget::Kind::Knob, "SUPR", "suppress", 59.56f, 62.0f);
+        p.add(Widget::Kind::Jack, "GATE", "in:gate", 16.51f, 80.0f);
+        p.add(Widget::Kind::Jack, "PTCH", "in:pitch", 29.21f, 80.0f);
+        p.add(Widget::Kind::Jack, "ACC", "in:accent", 41.91f, 80.0f);
+        p.add(Widget::Kind::Jack, "RST", "in:reset", 54.61f, 80.0f);
+        p.add(Widget::Kind::Jack, "ENF", "out:emphasis", 16.51f, 95.0f);
+        p.add(Widget::Kind::Jack, "VCA", "out:vca", 29.21f, 95.0f);
+        p.add(Widget::Kind::Jack, "FC", "out:cutoff", 41.91f, 95.0f);
+        p.add(Widget::Kind::Jack, "DEC", "out:decay", 54.61f, 95.0f);
+        p.add(Widget::Kind::Jack, "SWP", "out:sweep", 22.86f, 110.0f);
+        p.add(Widget::Kind::Jack, "GT", "out:gate", 35.56f, 110.0f);
+        p.add(Widget::Kind::Jack, "NIV", "out:level", 48.26f, 110.0f);
         return p;
     }
 

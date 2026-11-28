@@ -52,21 +52,24 @@ public:
 
     Panel panel() const override {
         Panel p;
+        // Personalização (autor, 27/11/2026: "avance na personalização dos
+        // módulos"; jacks embaixo): círculos
+        // sobre círculos: RATE (o giro) e CIRC (quantos), em par de 12 mm.
         p.hp = 10;
         p.add(Widget::Kind::Label, "EPICYCLE", "", 2.5f, 2.0f);
-        p.add(Widget::Kind::Display, "epicycle", "", 2.5f, 6.0f, 45.8f);
-        p.add(Widget::Kind::Knob, "RATE", "rate", 8.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "CIRC", "circles", 23.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "MODO", "mode", 38.0f, 30.0f);
-        p.add(Widget::Kind::Knob, "DESV", "detune", 8.0f, 54.0f);
-        p.add(Widget::Kind::Knob, "FASE", "phase", 23.0f, 54.0f);
-        p.add(Widget::Kind::Jack, "PTCH", "in:pitch", 7.0f, 92.0f);
-        p.add(Widget::Kind::Jack, "RST", "in:reset", 19.0f, 92.0f);
-        p.add(Widget::Kind::Jack, "X", "out:x", 7.0f, 106.0f);
-        p.add(Widget::Kind::Jack, "Y", "out:y", 19.0f, 106.0f);
-        p.add(Widget::Kind::Jack, "R", "out:radius", 31.0f, 106.0f);
-        p.add(Widget::Kind::Jack, "ANG", "out:angle", 7.0f, 120.0f);
-        p.add(Widget::Kind::Jack, "GT", "out:gate", 19.0f, 120.0f);
+        p.add(Widget::Kind::Display, "epicycle", "", 2.5f, 6.0f, 45.80f);
+        p.add(Widget::Kind::Knob, "RATE", "rate", 9.24f, 27.0f, 12.0f);
+        p.add(Widget::Kind::Knob, "CIRC", "circles", 29.56f, 27.0f, 12.0f);
+        p.add(Widget::Kind::Knob, "MODO", "mode", 7.40f, 46.0f);
+        p.add(Widget::Kind::Knob, "DESV", "detune", 21.40f, 46.0f);
+        p.add(Widget::Kind::Knob, "FASE", "phase", 35.40f, 46.0f);
+        p.add(Widget::Kind::Jack, "PTCH", "in:pitch", 19.05f, 72.0f);
+        p.add(Widget::Kind::Jack, "RST", "in:reset", 31.75f, 72.0f);
+        p.add(Widget::Kind::Jack, "X", "out:x", 12.70f, 92.0f);
+        p.add(Widget::Kind::Jack, "Y", "out:y", 25.40f, 92.0f);
+        p.add(Widget::Kind::Jack, "R", "out:radius", 38.10f, 92.0f);
+        p.add(Widget::Kind::Jack, "ANG", "out:angle", 19.05f, 110.0f);
+        p.add(Widget::Kind::Jack, "GT", "out:gate", 31.75f, 110.0f);
         return p;
     }
 

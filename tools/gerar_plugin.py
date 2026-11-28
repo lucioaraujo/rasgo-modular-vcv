@@ -2,8 +2,8 @@
 """Gera o plugin VCV a partir do Rasgo Modular (cópia fixada, sem dependência
 de build da pasta irmã — RASGO/AGENTS.md §4).
 
-- copia src/core (o necessário) e src/dsp inteiros de RASGO_MODULAR (o commit
-  atual) para src/rasgo/, com sha256 em PROVENANCE.sha256;
+- copia src/core (o necessário), src/dsp inteiros e as regras de painel de
+  src/ui de RASGO_MODULAR (o commit atual) para src/rasgo/, com sha256 em PROVENANCE.sha256;
 - lê o catálogo (apps/panel/ModuleCatalog.hpp): tipo → classe e família;
 - escreve src/modulos.inc (os modelos) e src/familias.inc (tipo → família);
 - reescreve a lista "modules" do plugin.json, com a descrição em inglês da
@@ -47,6 +47,12 @@ for f in ["SignalGraph.hpp", "Graph.hpp", "Panel.hpp", "Denormals.hpp", "RtFloat
     shutil.copy2(mod / "src/core" / f, dst / "core" / f)
 for f in sorted((mod / "src/dsp").glob("*.hpp")):
     shutil.copy2(f, dst / "dsp" / f.name)
+# as regras de painel compartilhadas (28/11/2026): centro e margens, placa e
+# luz das saídas, controle principal — as mesmas do app e da página, sem
+# dependência de interface (src/ui é só cálculo em mm)
+(dst / "ui").mkdir()
+for f in ["CompactPanel.hpp", "PanelGeometry.hpp", "PrimaryControl.hpp", "OutputLights.hpp"]:
+    shutil.copy2(mod / "src/ui" / f, dst / "ui" / f)
 linhas = []
 for f in sorted(dst.rglob("*.hpp")):
     linhas.append(f"{hashlib.sha256(f.read_bytes()).hexdigest()}  {f.relative_to(dst)}")

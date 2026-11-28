@@ -48,19 +48,22 @@ public:
 
     Panel panel() const override {
         Panel p;
+        // Personalização (autor, 28/11/2026: "avance nos 16 módulos que ainda
+        // faltam personalizar"; jacks embaixo): o vactrol:
+        // RESP (a resposta) e BNCE (o quique), em par de 12 mm.
         p.hp = 10;
         p.add(Widget::Kind::Label, "LPG", "", 2.5f, 2.0f);
-        p.add(Widget::Kind::Display, "env", "", 2.5f, 6.0f, 45.8f);
-        p.add(Widget::Kind::Knob, "MODE", "mode", 8.0f, 28.0f);
-        p.add(Widget::Kind::Knob, "RESP", "response", 28.0f, 28.0f);
-        p.add(Widget::Kind::Knob, "OFST", "offset", 8.0f, 48.0f);
-        p.add(Widget::Kind::Knob, "RESO", "resonance", 28.0f, 48.0f);
-        p.add(Widget::Kind::Knob, "BNCE", "bounce", 8.0f, 68.0f);
-        p.add(Widget::Kind::Knob, "DRIFT", "drift", 28.0f, 68.0f);
-        p.add(Widget::Kind::Jack, "IN", "in:in", 6.0f, 100.0f);
-        p.add(Widget::Kind::Jack, "STRK", "in:strike", 18.0f, 100.0f);
-        p.add(Widget::Kind::Jack, "CV", "in:cv", 30.0f, 100.0f);
-        p.add(Widget::Kind::Jack, "OUT", "out:out", 42.0f, 100.0f);
+        p.add(Widget::Kind::Display, "env", "", 2.5f, 6.0f, 45.80f);
+        p.add(Widget::Kind::Knob, "RESP", "response", 9.24f, 27.0f, 12.0f);
+        p.add(Widget::Kind::Knob, "BNCE", "bounce", 29.56f, 27.0f, 12.0f);
+        p.add(Widget::Kind::Knob, "MODE", "mode", 7.40f, 46.0f);
+        p.add(Widget::Kind::Knob, "OFST", "offset", 21.40f, 46.0f);
+        p.add(Widget::Kind::Knob, "RESO", "resonance", 35.40f, 46.0f);
+        p.add(Widget::Kind::Knob, "DRIFT", "drift", 21.40f, 62.0f);
+        p.add(Widget::Kind::Jack, "IN", "in:in", 12.70f, 92.0f);
+        p.add(Widget::Kind::Jack, "STRK", "in:strike", 25.40f, 92.0f);
+        p.add(Widget::Kind::Jack, "CV", "in:cv", 38.10f, 92.0f);
+        p.add(Widget::Kind::Jack, "OUT", "out:out", 25.40f, 110.0f);
         return p;
     }
 

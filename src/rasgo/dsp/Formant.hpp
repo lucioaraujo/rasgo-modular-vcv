@@ -60,20 +60,27 @@ public:
 
     Panel panel() const override {
         Panel p;
-        p.hp = 14;
+        // 10 HP (autor, 26/11/2026: "uma fileira de 4 knobs e outra com 2,
+        // creio que podemos diminuir a largura"): duas fileiras de três
+        // knobs nas mesmas colunas, as quatro entradas numa fileira e a saída
+        // sozinha embaixo, no centro (G1–G4).
+        // Personalização (autor, 28/11/2026: "avance nos 16 módulos que ainda
+        // faltam personalizar"; jacks embaixo): a vogal
+        // grande no centro; SHIFT e RES nos lados.
+        p.hp = 10;
         p.add(Widget::Kind::Label, "FORMANT", "", 2.5f, 2.0f);
-        p.add(Widget::Kind::Display, "spec", "", 2.5f, 6.0f, 66.0f);
-        p.add(Widget::Kind::Knob, "VOWEL", "vowel", 7.0f, 28.0f);
-        p.add(Widget::Kind::Knob, "SHIFT", "shift", 24.0f, 28.0f);
-        p.add(Widget::Kind::Knob, "RES", "res", 41.0f, 28.0f);
-        p.add(Widget::Kind::Knob, "MIX", "mix", 58.0f, 28.0f);
-        p.add(Widget::Kind::Knob, "DRIFT", "drift", 7.0f, 50.0f);
-        p.add(Widget::Kind::Knob, "VOCOD", "vocoder", 24.0f, 50.0f);
-        p.add(Widget::Kind::Jack, "IN", "in:in", 8.0f, 92.0f);
-        p.add(Widget::Kind::Jack, "VOW", "in:vowel", 22.0f, 92.0f);
-        p.add(Widget::Kind::Jack, "SHF", "in:shift", 36.0f, 92.0f);
-        p.add(Widget::Kind::Jack, "MOD", "in:mod", 50.0f, 92.0f);
-        p.add(Widget::Kind::Jack, "OUT", "out:out", 8.0f, 114.0f);
+        p.add(Widget::Kind::Display, "spec", "", 2.5f, 6.0f, 45.80f);
+        p.add(Widget::Kind::Knob, "SHIFT", "shift", 5.40f, 31.0f);
+        p.add(Widget::Kind::Knob, "VOWEL", "vowel", 18.40f, 27.0f, 14.0f);   // o herói
+        p.add(Widget::Kind::Knob, "RES", "res", 37.40f, 31.0f);
+        p.add(Widget::Kind::Knob, "MIX", "mix", 7.40f, 52.0f);
+        p.add(Widget::Kind::Knob, "DRIFT", "drift", 21.40f, 52.0f);
+        p.add(Widget::Kind::Knob, "VOCOD", "vocoder", 35.40f, 52.0f);
+        p.add(Widget::Kind::Jack, "IN", "in:in", 10.16f, 88.0f);
+        p.add(Widget::Kind::Jack, "VOW", "in:vowel", 20.32f, 88.0f);
+        p.add(Widget::Kind::Jack, "SHF", "in:shift", 30.48f, 88.0f);
+        p.add(Widget::Kind::Jack, "MOD", "in:mod", 40.64f, 88.0f);
+        p.add(Widget::Kind::Jack, "OUT", "out:out", 25.40f, 110.0f);
         return p;
     }
 
